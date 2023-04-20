@@ -33,7 +33,7 @@
 %
 %---------------------------------------------------------------------
 %
-% Fichero que contiene la configuraci�n de la portada y de la 
+% Fichero que contiene la configuración de la portada y de la 
 % primera hoja del documento.
 %
 %---------------------------------------------------------------------
@@ -43,19 +43,30 @@
 % utilizando comandos.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instituci�n/departamento asociado al documento.
+% Institución/departamento asociado al documento.
 % \institucion{Nombre}
 % Puede tener varias l�neas. Se utiliza en las dos portadas.
 % Si no se indica aparecer� vac�o.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \institucion{%
-UNIVERSIDAD AUT\'ONOMA "GABRIEL REN\'E MORENO"\\ [0.2em]
-FACULTAD DE INGENIER\'IA EN CIENCIAS DE LA COMPUTACI\'ON Y TELECOMUNICACIONES\\ [0.2em]
-"UAGRM SCHOOL OF ENGINEERING"
+UNIVERSIDAD AUT\'ONOMA ``GABRIEL REN\'E MORENO''\\
+FACULTAD DE INGENIER\'IA EN CIENCIAS DE LA COMPUTACI\'ON Y TELECOMUNICACIONES\\
+\vspace{36pt}
+``UAGRM SCHOOL OF ENGINEERING''
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% T�tulo del documento:
+% Título del grado:
+% \tituloGrado{titulo}
+% Nota:
+% Aquí se coloca el título del grado al que se va a optar.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tituloGrado{%
+MAESTR\'IA EN DIRECCI\'ON ESTRAT\'EGICA EN INGENIER\'IA DE SOFTWARE
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título del documento:
 % \tituloPortada{titulo}
 % Nota:
 % Si no se define se utiliza el del \titulo. Este comando permite
@@ -68,19 +79,38 @@ para Tesis y otros documentos%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Subtítulo del documento:
+% \subtituloPortada{subtitulo}
+% Nota:
+% Si no se define se utiliza el del \titulo. Este comando permite
+% cambiar el t�tulo de forma que se especifiquen d�nde se quieren
+% los retornos de carro cuando se utilizan fuentes grandes.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtituloPortada{%
+TRABAJO FINAL DE GRADO BAJO LA MODALIDAD DE TESIS PARA OPTAR AL T\'ITULO DE MAESTRO EN CIENCIAS %
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Autor del documento:
 % \autorPortada{Nombre}
 % Se utiliza en la portada y en el valor por defecto del
 % primer subt�tulo de la segunda portada.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\autorPortada{Marco Antonio G�mez Mart�n\\Pedro Pablo G�mez Mart�n}
+\autorPortada{Luis Ariel Vega Soliz}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Fecha de publicaci�n:
-% \fechaPublicacion{Fecha}
-% Puede ser vac�o. Aparece en la �ltima l�nea de ambas portadas
+% Lugar de publicación:
+% \lugarPublicacion{Lugar}
+% Puede ser vacío. Aparece en la penúltima línea de ambas portadas
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\fechaPublicacion{Noviembre 2009}
+\lugarPublicacion{Santa Cruz, Bolivia}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fecha de publicación:
+% \fechaPublicacion{Fecha}
+% Puede ser vacío. Aparece en la última línea de ambas portadas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fechaPublicacion{Noviembre, 2023}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Imagen de la portada (y escala)
@@ -97,16 +127,16 @@ para Tesis y otros documentos%
 % Para el texto justo debajo del escudo.
 % Si no se indica, se utiliza "TESIS DOCTORAL".
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tipoDocumento{MANUAL DE USUARIO}
+\tipoDocumento{TESIS DE MAESTR\'IA}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Director del trabajo.
 % \directorPortada{Nombre}
-% Se utiliza para el valor por defecto del segundo subt�tulo, donde
-% se indica qui�n es el director del trabajo.
-% Si se fuerza un subt�tulo distinto, no hace falta definirlo.
+% Se utiliza para el valor por defecto del segundo subtítulo, donde
+% se indica quién es el director del trabajo.
+% Si se fuerza un subtítulo distinto, no hace falta definirlo.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\directorPortada{Walterio Malatesta}
+\directorPortada{Walterio Malatesta}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Texto del primer subt�tulo de la segunda portada.
@@ -148,7 +178,7 @@ para Tesis y otros documentos%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \copyrightInfo
-% Si se utiliza, aparecer� informaci�n de los derechos de copyright
+% Si se utiliza, aparecer� información de los derechos de copyright
 % detr�s de la segunda portada.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \copyrightInfo{\autor}
@@ -160,7 +190,7 @@ para Tesis y otros documentos%
 \makeCover
 
 % Variable local para emacs, para que encuentre el fichero
-% maestro de compilaci�n
+% maestro de compilación
 %%%
 %%% Local Variables:
 %%% mode: latex

@@ -6,7 +6,7 @@
 %
 % Este fichero contiene el "documento maestro" del documento. Lo �nico
 % que hace es configurar el entorno LaTeX e incluir los ficheros .tex
-% que contienen cada secci�n.
+% que contienen cada sección.
 %
 %----------------------------------------------------------------------
 %
@@ -18,12 +18,12 @@
 %       Capitulos/*.tex : cap�tulos de la tesis
 %       Apendices/*.tex: ap�ndices de la tesis
 %       constantes.tex: constantes LaTeX
-%       config.tex : configuraci�n de la "compilaci�n" del documento
+%       config.tex : configuración de la "compilación" del documento
 %       guionado.tex : palabras con guiones
 %
 % Para la bibliograf�a, adem�s, se necesitan:
 %
-%       *.bib : ficheros con la informaci�n de las referencias
+%       *.bib : ficheros con la información de las referencias
 %
 % ---------------------------------------------------------------------
 
@@ -33,8 +33,8 @@
 % Definimos  el   comando  \compilaCapitulo,  que   luego  se  utiliza
 % (opcionalmente) en config.tex. Quedar�a  mejor si tambi�n se definiera
 % en  ese fichero,  pero por  el modo  en el  que funciona  eso  no es
-% posible. Puedes consultar la documentaci�n de ese fichero para tener
-% m�s  informaci�n. Definimos tambi�n  \compilaApendice, que  tiene el
+% posible. Puedes consultar la documentación de ese fichero para tener
+% m�s  información. Definimos tambi�n  \compilaApendice, que  tiene el
 % mismo  cometido, pero  que se  utiliza para  compilar  �nicamente un
 % ap�ndice.
 %
@@ -49,7 +49,7 @@
 % la plantilla...
 %
 % Total,  que definimos  una constante  con los  ficheros  que siempre
-% vamos a querer compilar  (aquellos relacionados con configuraci�n) y
+% vamos a querer compilar  (aquellos relacionados con configuración) y
 % luego definimos \compilaCapitulo.
 \newcommand{\ficherosBasicosTeXiS}{%
 TeXiS/TeXiS_pream,TeXiS/TeXiS_cab,TeXiS/TeXiS_bib,TeXiS/TeXiS_cover,%
@@ -70,9 +70,9 @@ constantes,guionado,Cascaras/bibliografia,config%
 %            Pre�mbulo del documento. Configuraciones varias
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-% Define  el  tipo  de  compilaci�n que  estamos  haciendo.   Contiene
+% Define  el  tipo  de  compilación que  estamos  haciendo.   Contiene
 % definiciones  de  constantes que  cambian  el  comportamiento de  la
-% compilaci�n. Debe incluirse antes del paquete TeXiS/TeXiS.sty
+% compilación. Debe incluirse antes del paquete TeXiS/TeXiS.sty
 \include{config}
 
 % Paquete de la plantilla
@@ -81,7 +81,7 @@ constantes,guionado,Cascaras/bibliografia,config%
 % Incluimos el fichero con comandos de constantes
 \include{constantes}
 
-% Sacamos en el log de la compilaci�n el copyright
+% Sacamos en el log de la compilación el copyright
 \typeout{Copyright Marco Antonio and Pedro Pablo Gomez Martin}
 
 %
@@ -91,7 +91,7 @@ constantes,guionado,Cascaras/bibliografia,config%
     pdftitle = {\titulo},
     pdfsubject = {Plantilla de Tesis},
     pdfkeywords = {Plantilla, LaTeX, tesis, trabajo de
-      investigaci�n, trabajo de Master},
+      investigación, trabajo de Master},
     pdfauthor = {\textcopyright\ \autor},
     pdfcreator = {\LaTeX\ con el paquete \flqq hyperref\frqq},
     pdfproducer = {pdfeTeX-0.\the\pdftexversion\pdftexrevision},
@@ -105,11 +105,11 @@ constantes,guionado,Cascaras/bibliografia,config%
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \begin{document}
 
-% Incluimos el  fichero de definici�n de guionado  de algunas palabras
+% Incluimos el  fichero de definición de guionado  de algunas palabras
 % que LaTeX no ha dividido como deber�a
 \input{guionado}
 
-% Marcamos  el inicio  del  documento para  la  numeraci�n de  p�ginas
+% Marcamos  el inicio  del  documento para  la  numeración de  p�ginas
 % (usando n�meros romanos para esta primera fase).
 \frontmatter
 
@@ -126,7 +126,7 @@ constantes,guionado,Cascaras/bibliografia,config%
 \include{TeXiS/TeXiS_toc}
 \fi
 
-% Marcamos el  comienzo de  los cap�tulos (para  la numeraci�n  de las
+% Marcamos el  comienzo de  los cap�tulos (para  la numeración  de las
 % p�ginas) y ponemos la cabecera normal
 \mainmatter
 \restauraCabecera
@@ -160,13 +160,13 @@ constantes,guionado,Cascaras/bibliografia,config%
 %
 
 % S�lo  la   generamos  si  est�   declarada  \generaindice.  Consulta
-% TeXiS.sty para m�s informaci�n.
+% TeXiS.sty para m�s información.
 
-% En realidad, el soporte para la generaci�n de �ndices de palabras
+% En realidad, el soporte para la generación de �ndices de palabras
 % en TeXiS no est� documentada en el manual, porque no ha sido usada
-% "en producci�n". Por tanto, el fichero que genera el �ndice
-% *no* se incluye aqu� (est� comentado). Consulta la documentaci�n
-% en TeXiS_pream.tex para m�s informaci�n.
+% "en producción". Por tanto, el fichero que genera el �ndice
+% *no* se incluye aqu� (est� comentado). Consulta la documentación
+% en TeXiS_pream.tex para m�s información.
 \ifx\generaindice\undefined
 \else
 %\include{TeXiS/TeXiS_indice}
@@ -177,7 +177,7 @@ constantes,guionado,Cascaras/bibliografia,config%
 %
 
 % S�lo  lo  generamos  si  est� declarada  \generaacronimos.  Consulta
-% TeXiS.sty para m�s informaci�n.
+% TeXiS.sty para m�s información.
 
 
 \ifx\generaacronimos\undefined
