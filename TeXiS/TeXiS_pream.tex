@@ -142,15 +142,15 @@
   \usepackage{glosstex}
 \fi
 
-% shortvrb supuestamente define algunas macros cómodas como carácteres
-% de escape.  Por ejemplo, para poner  un < normalmente  hay que hacer
-% una  ecuación:   $<$.  Este   paquete  define  algunas   macros  más
-% intuitivas, en este caso bastaría  con \< De igual forma, para poner
-% algo en  verbatim, la versión  larga es \texttt{blabla},  la versión
-% corta es  \verb+blabla+ (el +  puede sustituirse por  cualquier otra
-% cosa,  como un  |  ), y  con  este paquete  basta  con |blabla|  (es
-% equivalente a \verb|blabla|).  Pero vamos... a mí no me funciona :-/
-
+% El paquete  "shortvrb"  supuestamente  define algunas macros cómodas
+% como caracteres de escape. Por ejemplo, para poner  un < normalmente
+% hay que hacer una  ecuación:   $<$.  Este   paquete  define  algunas
+% macros más intuitivas, en este caso bastaría  con \< De igual forma,
+% para poner algo en  verbatim, la versión  larga  es \texttt{blabla},
+% la  versión  corta  es  \verb+blabla+  (el +  puede  sustituirse por
+% cualquier otra cosa,  como un  |  ), y  con  este paquete basta  con
+% |blabla|  (es equivalente a \verb|blabla|).  Pero vamos...  a  mí no
+% me funciona :-/
 \usepackage{shortvrb}
 
 % Modifica la codificación de  entrada para LaTeX. Básicamente permite
@@ -172,7 +172,6 @@
 % del propio  TeXiS que en realidad  están con ISO  8859-1. Por tanto,
 % usa  utf8  *bajo tu  propia  responsabilidad*.  TeXiS, desde  luego,
 % recomienda el uso de ISO 8859-1.
-
 \usepackage[latin1]{inputenc}
 
 % Incluimos el  estilo de bibliografía natbib, para  poder citarlas de
@@ -195,7 +194,6 @@
 % da significado  a ~n y lo  sustituye sin que le  digamos nada... hay
 % más  información en  el comentario  de babel  y  en TeXiS_bib.tex
 % http://chico.rediris.es/cgi-bin/wa?A2=ind0601&L=es-tex&D=0&P=1989
-
 \usepackage[round]{natbib}
 
 % Activa el  uso de  español. Babel es  un paquete bastante  gordo que
@@ -205,7 +203,6 @@
 % En algún sitio leí que "activeacute" nos permite poner á en lugar de
 % tener que escribir  \'a ... aunque eso en teoría  lo hace el paquete
 % inputenc :-m
-
 \usepackage[spanish,activeacute]{babel}
 
 % El paquete url sirve para poder  poner direcciones Web y no morir en
@@ -215,8 +212,7 @@
 % Se utiliza poniendo la  dirección con \url{http://...}  Tambi�n vale
 % para direcciones de correo, etc.
 % No conviene  quitarlo, porque con  casi toda seguridad, al  menos la
-% bibliografía utilizar� el comando.
-
+% bibliografía utilizará el comando.
 \usepackage{url}
 
 % El documento está  pensado para ser compilado o  bien con pdflatex o
@@ -235,7 +231,6 @@
 % \else
 % ...
 % \fi
-
 \usepackage{ifpdf}
 
 % Juego (solo make latex) :-p
@@ -250,22 +245,10 @@
 % de página del Adobe Acrobat  salga el número de "página lógico", por
 % ejemplo  "v (5  de  180)"  (con n�mero  romano  porque al  principio
 % empieza a numerarse así).
-
 \ifpdf
    \RequirePackage[pdfborder=0,colorlinks,hyperindex,pdfpagelabels]{hyperref}
-   \def\pdfBorderAttrs{/Border [0 0 0] } % Ning�n borde en los enlaces
+   \def\pdfBorderAttrs{/Border [0 0 0] } % Ningún borde en los enlaces
 \fi
-
-% Cuando se  genera el  índice, se necesita  el paquete  hyperref, que
-% permite referencias  (o enlaces) en el propio  documento. El paquete
-% aparece como \RequirePackage cuando se está usando pdflatex, gracias
-% al comando anterior. Si no se está en pdf, se incluye directamente
-\ifpdf
-\else
-\usepackage{hyperref}
-\fi
-
-\hypersetup{colorlinks=false}
 
 
 % Durante  la infancia  de TeXiS  (es decir,  cuando estábamos  en las
@@ -276,8 +259,8 @@
 % r�pida de los lugares donde se habla de ciertas cosas.
 %
 % El problema  de hacer  dicho índice no  es sólo "tecnológico"  en lo
-% referente al  uso de  LaTeX, sino  tambi�n a la  hora de  marcar qué
-% palabras (y en qué lugares) se quieren a�adir a dicho índice.
+% referente al  uso de  LaTeX, sino  también a la  hora de  marcar qué
+% palabras (y en qué lugares) se quieren añadir a dicho índice.
 %
 % En nuestro  caso, después de haber superado  la barrera tecnol�gica,
 % decidimos que no  merec�a la pena el esfuerzo  de recorrer las tesis
@@ -293,7 +276,7 @@
 % En realidad, para añadir un índice de palabras bastaría con:
 %
 %    - Modificar la parte final de Tesis.tex, e incluir siempre
-%      TeXiS/TeXiS_indice (ahora su inclusi�n está comentada).
+%      TeXiS/TeXiS_indice (ahora su inclusión está comentada).
 %    - Modificar el Makefile y descomentar las lineas
 %      -makeindex $(NOMBRE_LATEX)
 %      pare que se genere el índice de palabras.
@@ -340,7 +323,6 @@
  
 % http://www.mpi.nl/world/persons/private/robstu/latex/how_to/indexes.html
 % http://ipagwww.med.yale.edu/latex/makeindex.pdf
-
 \usepackage{makeidx}
 
 
@@ -349,10 +331,9 @@
 % Pero... parece que no funciona con el pdflatex de Linux :'( En lugar
 % de sacar las palabras en la esquina de la página la saca en el sitio
 % donde están insertadas, en mitad del párrafo... y claro, es un tanto
-% ca�tico :'(
+% caótico :'(
 % Por  eso, aunque  estemos en  modo "depuración",  si  estamos usando
 % pdflatex no se incluye.
-
 \ifpdf
 \else
    \ifx\release\undefined
@@ -386,7 +367,6 @@
 % demasiado  cargado.   Además,  provoca  errores de  compilación  con
 % algunas figuras  convertidas desde eps  a pdf cuando se  compila con
 % pdflatex.
-
 \ifx\release\undefined
 %\usepackage{showkeys}
 \fi
@@ -525,22 +505,22 @@
 %
 % De esta  forma, se  hace que  el código en  el lstlisting  ocupe dos
 % quintas  partes del ancho  de la  página.  Se  podría pensar  que es
-% posible  utilizar  el  "par�metro"  linewidth  del  lstlisting,  que
+% posible  utilizar  el  "parámetro"  linewidth  del  lstlisting,  que
 % permite     también     indicar      el     ancho     del     código
-% (\begin{lstlisting}[frame=tb,linediwth=0.4\linewidth]; sin embargo,
+% (\begin{lstlisting}[frame=tb,linediwth=0.4\linewidth];  sin embargo,
 % eso  no es  posible ya  que ese  ancho es  utilizado por  el entorno
 % lstlisting para  dibujar el marco  y, si tiene activado  el "romper"
 % las líneas  automáticamente, para romperlas; si todas  las líneas de
 % código  son más  cortas que  ese  espacio, el  espacio efectivo  del
-% código ser� el ancho de la línea más ancha.
+% código será el ancho de la línea más ancha.
 %
 % Otra desagradable sorpresa surge  con los subfloat: existe un margen
 % a los  lados del �rea reservada  a la subfigura, para  que no queden
-% todas  pegadas.   Esto  está  bien,  porque así  no  tienes  t�  que
+% todas  pegadas.   Esto  está  bien,  porque así  no  tienes  tú  que
 % encargarte de  definir el espacio; simplemente  decides cu�nto ocupa
-% de ancho cada  subfigura, y �l se encarga de  colocarlo todo. Lo que
+% de ancho cada  subfigura, y él se encarga de  colocarlo todo. Lo que
 % ocurre es que parece no tener  en cuenta que, cuando a la derecha de
-% un subfloat NO hay otro (porque es el �ltimo de la "línea"), _sigue_
+% un subfloat NO hay otro (porque es el último de la "línea"), _sigue_
 % poniendo  el espacio  en blanco  para  separar con  el siguiente  (e
 % inexistente) subfloat, lo  que hace que, en caso  de estar centrando
 % los elementos, no quede perfectamente centrado :(
@@ -564,8 +544,8 @@
 \makeatother
 
 
-% Para poder  incluir código  fuente resaltado f�cilmente.   El tamaño
-% b�sico de la letra, peque�o.
+% Para poder  incluir código  fuente resaltado fácilmente.   El tamaño
+% básico de la letra, peque�o.
 \usepackage{listings}
 \lstset{basicstyle=\small}
 \lstset{showstringspaces=false}
@@ -602,23 +582,21 @@
 % El paquete  psboxit permite poner  una imagen Post Script  dentro de
 % una  caja de  TeX. La  imagen se  parametriza con  la posición  y el
 % tamaño de la caja TeX.
-
 %\usepackage{psboxit}
 
 % Permite hacer cálculos sencillos dentro  de un documento de LaTeX Lo
-% necesitamos en  la portada, para  poder ajustar los m�rgenes  con un
+% necesitamos en  la portada, para  poder ajustar los márgenes  con un
 % poco de independencia  del tamaño de la página.  Consulta el fichero
 % portada.tex para más información.
 \usepackage{calc}
 
 % Define el entorno  longtable que sirve para crear  tablas que ocupan
 % más de una página.
-
 %\usepackage{longtable}
 
 % Cuando en una tabla tenemos lineas dobles de separación entre filas
-% y columnas, LaTeX las pinta de manera que d� la sensación de que
-% cada celda es un rect�ngulo:
+% y columnas, LaTeX las pinta de manera que dá la sensación de que
+% cada celda es un rectángulo:
 %          | |
 %  [celda] | | [celda]
 %          | |
@@ -650,17 +628,11 @@
 % lleva bien con celdas con  fondo de color, porque queda _debajo_ del
 % relleno y no se ve. \hhline sin embargo queda por encima, por lo que
 % puede utilizarse para pintar lineas sencillas sin preocuparnos de la
-% interacción  con las líneas  horizontales (quiz�  tambi�n sencillas)
-% pero aprovechar  que s� van a  verse.  En concreto, en  una tabla de
-% cuatro columnas  \cline{1-3} es  similar a \hhline{----~}  (el gui�n
+% interacción  con las líneas  horizontales (quizá  también sencillas)
+% pero aprovechar  que sí van a  verse.  En concreto, en  una tabla de
+% cuatro columnas  \cline{1-3} es  similar a \hhline{----~}  (el guión
 % indica  que  queremos  línea para  esa  columna,  y  el ~  que  no).
 % \usepackage{hhline}
-
-
-% \usepackage[verbose]{geometry}
-% \geometry{a4paper}
-% \geometry{twosideshift=0pt}
-% \geometry{top=4cm,bottom=4cm,left=3cm,right=3cm,headsep=1cm}
 
 %
 % Paquete para  poder ampliar las  opciones de las tablas,  para poder
@@ -683,9 +655,9 @@
 %    |
 %
 % En la casilla a dividir, \backslashbox{a}{b} & ...
-% Vamos... no queda muy bien... en alg�n sitio vi que para mejorar un
-% poco el aspecto se pod�a inclu�r pict2e tambi�n, aunque en cualquier
-% caso el resultado pod�a seguir siendo discutible.
+% Vamos... no queda muy bien... en algún sitio vi que para mejorar un
+% poco el aspecto se podía incluír pict2e también, aunque en cualquier
+% caso el resultado podía seguir siendo discutible.
 
 %
 % Paquete para poder poner celdas de colores en una tabla
@@ -695,17 +667,16 @@
 
 
 % Paquete  que permite  cambiar  el formato  en  el que  se ponen  los
-% títulos   de   capítulos,  secciones,   etc.    Tambi�n  define   el
+% títulos   de   capítulos,  secciones,   etc.    También  define   el
 % comando \chaptertitlename, que  equivale a \chaptername ("capítulo")
-% cuando se está  dentro de un capítulo o  a \apendixname ("Apíndice")
-% cuando se  está en un apíndice.  Eso se utiliza en  la definición de
+% cuando se está  dentro de un capítulo o  a \apendixname ("Apéndice")
+% cuando se  está en un apéndice.  Eso se utiliza en  la definición de
 % las cabeceras.
 \usepackage{titlesec}
 
 
 % Cambio del título de los capítulos (sacado de
 % http://aristarco.dnsalias.org/book/export/html/13)
-
 % \newcommand{\bigrule}{\titlerule[0.5mm]}
 
 % \titleformat{\chapter}[display] % cambiamos el formato de los capítulos
@@ -713,18 +684,57 @@
 % {% contenido de la etiqueta
 %  \titlerule % línea horizontal
 %  \filleft % texto alineado a la derecha
-%  \Large\chaptertitlename\ % "capítulo" o "Apíndice" en tamaño \Large en lugar de \Huge
-%  \Large\thechapter} % n�mero de capítulo en tamaño \Large
-% {0mm} % espacio m�nimo entre etiqueta y cuerpo
+%  \Large\chaptertitlename\ % "capítulo" o "Apéndice" en tamaño \Large en lugar de \Huge
+%  \Large\thechapter} % número de capítulo en tamaño \Large
+% {0mm} % espacio mínimo entre etiqueta y cuerpo
 % {\filleft} % texto del cuerpo alineado a la derecha
 % [\vspace{0.5mm} \bigrule \vspace{1cm}] % después del cuerpo, dejar espacio vertical y trazar línea horizontal gruesa
 
 
 % Paquete que ayuda a establecer los márgenes.
 \usepackage{geometry}
+% \usepackage[verbose]{geometry}
+% \geometry{a4paper}
+% \geometry{twosideshift=0pt}
+% \geometry{top=4cm,bottom=4cm,left=3cm,right=3cm,headsep=1cm}
+
 
 % Paquete  que permite  establece la fuente a Times New Roman
 \usepackage{mathptmx}
+
+
+% El paquete "tocloft" permite crear nuevos tipos de listas
+%
+% Por defecto LaTeX tiene:
+%    - Tabla de contenidos
+%    - Índice de figuras
+%    - Índice de tablas
+% Lo que hace  que  si  necesitamos otros tipos de lista de cosas, por
+% ejemplo:  Índice de cuadros,  Índice de ilustraciones, etc.  se debe
+% definir.
+% Según:  https://tex.stackexchange.com/a/336618  se  debe  cargar  el
+% paquete  con  la  opción   [subfigure]   para  evitar  el  error  de
+% "LaTeX Error: Command \c@lofdepth already defined."
+\usepackage[subfigure,titles]{tocloft}
+
+
+% Elpaquete "float" se usa para definir nuevos elementos flotantes que
+% funcionan como tablas o figuras.
+\usepackage{float}
+
+
+% Cuando se  genera el  índice, se necesita el paquete "hyperref", que
+% permite referencias  (o enlaces) en el propio  documento. El paquete
+% aparece como \RequirePackage cuando se está usando pdflatex, gracias
+% al comando anterior. Si no se está en pdf, se incluye directamente.
+% Según:  https://tex.stackexchange.com/a/336618  se  debe  cargar  el
+% paquete al final, para evitar errores.
+\ifpdf
+\else
+\usepackage{hyperref}
+\fi
+\hypersetup{colorlinks=false}
+
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX

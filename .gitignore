@@ -11,6 +11,10 @@
 *.cb
 *.cb2
 .*.lb
+## Custom float objects
+*.loch
+*.loil
+*.loan
 
 ## Intermediate documents:
 *.dvi

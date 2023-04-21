@@ -39,14 +39,66 @@
 % Primero un poquito de configuración...
 
 
-% Pedimos que inserte todos los epígrafes hasta el nivel \subsection en
-% la tabla de contenidos.
+% Pedimos  que inserte  todos los epígrafes hasta el nivel \subsection
+% en la tabla de contenidos.
 \setcounter{tocdepth}{2} 
 
 % Le  pedimos  que nos  numere  todos  los  epígrafes hasta  el  nivel
 % \subsubsection en el cuerpo del documento.
 \setcounter{secnumdepth}{3} 
 
+
+% Nuevos tipos de listas
+
+% Por defecto LaTeX tiene:
+%    - Tabla de contenidos
+%    - Índice de figuras
+%    - Índice de tablas
+% Lo que hace  que  si  necesitamos otros tipos de lista de cosas, por
+% ejemplo:  Índice de cuadros,  Índice de ilustraciones, etc.  se debe
+% definir, para eso de usa el paquete "tocloft", como dice en:
+% https://texblog.org/2008/07/13/define-your-own-list-of/
+%
+% Ejemplo para listas de elementos de texto:
+%    \newcommand{\listXname}{List of Xs}
+%    \newlistof{X}{ex}{\listXname}
+%    \newcommand{\X}[1]{%
+%    \refstepcounter{X}
+%    \par\noindent\textbf{X \theexample. #1}
+%    \addcontentsline{exp}{example}
+%    {\protect\numberline{\thechapter.\theexample}#1}\par}
+%
+% Ejemplo para listas de elementos flotantes (un elemento flotante por
+% defecto son las tablas y las figuras)
+%    \newfloat{project}{tbph}{lop}
+%    \newcommand{\listprojectname}{List of projects}
+%    \newcommand{\listofprojects}{\listof{project}{\thispagestyle{empty} \textbf{\huge \listprojectname}}}
+
+% Índice de cuadros (List of charts)
+\newfloat{chart}{tbph}{loch}[chapter]
+\floatname{chart}{Cuadro}
+\newcommand{\listchartname}{List of charts}
+\newcommand{\listofcharts}{\listof{chart}{\thispagestyle{empty} \textbf{\huge \listchartname}}}
+
+%
+%
+% Índice de ilustraciones (List of illustrations)
+\newfloat{illustration}{tbph}{loil}[chapter]
+\floatname{illustration}{Ilustraci\'on}
+\newcommand{\listillustrationname}{List of illustrations}
+\newcommand{\listofillustrations}{\listof{illustration}{\thispagestyle{empty} \textbf{\huge \listillustrationname}}}
+
+%
+%
+% Índice de anexos (List of annexes)
+\newcommand{\listannexename}{List of charts}
+\newcommand{\listofannexes}{\thispagestyle{empty} \textbf{\huge \listannexename}}
+\newlistof{annexe}{loan}{\listofannexes}
+\newcommand{\annexe}[1]{%
+\refstepcounter{annexe}
+\par\noindent\textbf{Annexe \theannexe. #1}
+\addcontentsline{loan}{annexe}
+{\protect\numberline{\thechapter. \theannexe}#1}\par}
 
 % Creamos los diferentes índices.
 
@@ -80,26 +132,25 @@
 
 \newpage 
 
+
 % índice de cuadros
 %
 % La idea es semejante que para  el .toc del índice, pero ahora se usa
 % extensión .lof (List Of Figures) con la información de las figuras.
-
-
 \ifpdf
    \pdfbookmark[1]{\'Indice de cuadros}{indice de cuadros}
 \fi
 
 \cabeceraEspecial{\'Indice de cuadros}
 
-\renewcommand{\listfigurename}{\'INDICE DE CUADROS}
-\listoffigures
+\renewcommand{\listchartname}{\'INDICE DE CUADROS}
+\listofcharts
 
 \newpage
 
+
 % índice de tablas
 % Como antes, pero ahora .lot (List Of Tables)
-
 \ifpdf
    \pdfbookmark[1]{\'Indice de tablas}{indice de tablas}
 \fi
@@ -111,12 +162,11 @@
 
 \newpage
 
+
 % índice de figuras
 %
 % La idea es semejante que para  el .toc del índice, pero ahora se usa
 % extensión .lof (List Of Figures) con la información de las figuras.
-
-
 \ifpdf
    \pdfbookmark[1]{\'Indice de figuras}{indice de figuras}
 \fi
@@ -128,39 +178,38 @@
 
 \newpage
 
+
 % índice de ilustraciones
 %
 % La idea es semejante que para  el .toc del índice, pero ahora se usa
 % extensión .lof (List Of Figures) con la información de las figuras.
-
-
 \ifpdf
    \pdfbookmark[1]{\'Indice de ilustraciones}{indice de ilustraciones}
 \fi
 
 \cabeceraEspecial{\'Indice de ilustraciones}
 
-\renewcommand{\listfigurename}{\'INDICE DE ILUSTRACIONES}
-\listoffigures
+\renewcommand{\listillustrationname}{\'INDICE DE ILUSTRACIONES}
+\listofillustrations
 
 \newpage
+
 
 % índice de anexos
 %
 % La idea es semejante que para  el .toc del índice, pero ahora se usa
 % extensión .lof (List Of Figures) con la información de las figuras.
-
-
 \ifpdf
    \pdfbookmark[1]{\'Indice de anexos}{indice de anexos}
 \fi
 
 \cabeceraEspecial{\'Indice de anexos}
 
-\renewcommand{\listfigurename}{\'INDICE DE ANEXOS}
-\listoffigures
+\renewcommand{\listannexename}{\'INDICE DE ANEXOS}
+\listofannexes
 
 \newpage
+
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas r�pidas de AucTeX
