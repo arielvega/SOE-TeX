@@ -26,90 +26,144 @@
 %
 %---------------------------------------------------------------------
 %
-% Contiene  los  comandos  para  generar los  Ìndices  del  documento,
-% entendiendo por Ìndices las tablas de contenidos.
+% Contiene  los  comandos  para  generar los  √≠ndices  del  documento,
+% entendiendo por √≠ndices las tablas de contenidos.
 %
-% Genera  el  Ìndice normal  ("tabla  de  contenidos"),  el Ìndice  de
-% figuras y el de tablas. TambiÈn  crea "marcadores" en el caso de que
-% se estÈ compilando con pdflatex para que aparezcan en el PDF.
+% Genera  el  √≠ndice normal  ("tabla  de  contenidos"),  el √≠ndice  de
+% figuras y el de tablas. Tambi√©n  crea "marcadores" en el caso de que
+% se est√° compilando con pdflatex para que aparezcan en el PDF.
 %
 %---------------------------------------------------------------------
 
 
-% Primero un poquito de configuraciÛn...
+% Primero un poquito de configuraci√≥n...
 
 
-% Pedimos que inserte todos los epÌgrafes hasta el nivel \subsection en
+% Pedimos que inserte todos los ep√≠grafes hasta el nivel \subsection en
 % la tabla de contenidos.
 \setcounter{tocdepth}{2} 
 
-% Le  pedimos  que nos  numere  todos  los  epÌgrafes hasta  el  nivel
+% Le  pedimos  que nos  numere  todos  los  ep√≠grafes hasta  el  nivel
 % \subsubsection en el cuerpo del documento.
 \setcounter{secnumdepth}{3} 
 
 
-% Creamos los diferentes Ìndices.
+% Creamos los diferentes √≠ndices.
 
 % Lo primero un  poco de trabajo en los marcadores  del PDF. No quiero
-% que  salga una  entrada  por cada  Ìndice  a nivel  0...  si no  que
-% aparezca un marcador "Õndices", que  tenga dentro los otros tipos de
-% Ìndices.  Total, que creamos el marcador "Õndices".
-% Antes de  la creaciÛn  de los Ìndices,  se aÒaden los  marcadores de
+% que  salga una  entrada  por cada  √≠ndice  a nivel  0...  si no  que
+% aparezca un marcador "√≠ndices", que  tenga dentro los otros tipos de
+% √≠ndices.  Total, que creamos el marcador "√≠ndices".
+% Antes de  la creaci√≥n  de los √≠ndices,  se a√±aden los  marcadores de
 % nivel 1.
 
 \ifpdf
-   \pdfbookmark{Õndices}{indices}
+   \pdfbookmark{\'Indices}{Indices}
 \fi
 
 % Tabla de contenidos.
 %
-% La  inclusiÛn  de '\tableofcontents'  significa  que  en la  primera
-% pasada  de  LaTeX  se  crea   un  fichero  con  extensiÛn  .toc  con
-% informaciÛn sobre la tabla de contenidos (es conceptualmente similar
-% al  .bbl de  BibTeX, creo).  En la  segunda ejecuciÛn  de  LaTeX ese
-% documento se utiliza para  generar la verdadera p·gina de contenidos
-% usando la  informaciÛn sobre los  capÌtulos y dem·s guardadas  en el
+% La  inclusi√≥n  de '\tableofcontents'  significa  que  en la  primera
+% pasada  de  LaTeX  se  crea   un  fichero  con  extensi√≥n  .toc  con
+% informaci√≥n sobre la tabla de contenidos (es conceptualmente similar
+% al  .bbl de  BibTeX, creo).  En la  segunda ejecuci√≥n  de  LaTeX ese
+% documento se utiliza para  generar la verdadera p√°gina de contenidos
+% usando la  informaci√≥n sobre los  cap√≠tulos y dem√°s guardadas  en el
 % .toc
 \ifpdf
-   \pdfbookmark[1]{Tabla de contenidos}{tabla de contenidos}
+   \pdfbookmark[1]{\'Indice general}{Indice general}
 \fi
 
-\cabeceraEspecial{\'Indice}
-
+\cabeceraEspecial{\'Indice general}
+\renewcommand{\contentsname}{\'INDICE GENERAL}
 \tableofcontents
 
 \newpage 
 
-% Õndice de figuras
+% √≠ndice de cuadros
 %
-% La idea es semejante que para  el .toc del Ìndice, pero ahora se usa
-% extensiÛn .lof (List Of Figures) con la informaciÛn de las figuras.
+% La idea es semejante que para  el .toc del √≠ndice, pero ahora se usa
+% extensi√≥n .lof (List Of Figures) con la informaci√≥n de las figuras.
 
-\cabeceraEspecial{\'Indice de figuras}
 
 \ifpdf
-   \pdfbookmark[1]{Õndice de figuras}{indice de figuras}
+   \pdfbookmark[1]{\'Indice de cuadros}{indice de cuadros}
 \fi
 
+\cabeceraEspecial{\'Indice de cuadros}
+
+\renewcommand{\listfigurename}{\'INDICE DE CUADROS}
 \listoffigures
 
 \newpage
 
-% Õndice de tablas
+% √≠ndice de tablas
 % Como antes, pero ahora .lot (List Of Tables)
 
 \ifpdf
-   \pdfbookmark[1]{Õndice de tablas}{indice de tablas}
+   \pdfbookmark[1]{\'Indice de tablas}{indice de tablas}
 \fi
 
 \cabeceraEspecial{\'Indice de tablas}
 
+\renewcommand{\listtablename}{\'INDICE DE TABLAS}
 \listoftables
 
 \newpage
 
+% √≠ndice de figuras
+%
+% La idea es semejante que para  el .toc del √≠ndice, pero ahora se usa
+% extensi√≥n .lof (List Of Figures) con la informaci√≥n de las figuras.
+
+
+\ifpdf
+   \pdfbookmark[1]{\'Indice de figuras}{indice de figuras}
+\fi
+
+\cabeceraEspecial{\'Indice de figuras}
+
+\renewcommand{\listfigurename}{\'INDICE DE FIGURAS}
+\listoffigures
+
+\newpage
+
+% √≠ndice de ilustraciones
+%
+% La idea es semejante que para  el .toc del √≠ndice, pero ahora se usa
+% extensi√≥n .lof (List Of Figures) con la informaci√≥n de las figuras.
+
+
+\ifpdf
+   \pdfbookmark[1]{\'Indice de ilustraciones}{indice de ilustraciones}
+\fi
+
+\cabeceraEspecial{\'Indice de ilustraciones}
+
+\renewcommand{\listfigurename}{\'INDICE DE ILUSTRACIONES}
+\listoffigures
+
+\newpage
+
+% √≠ndice de anexos
+%
+% La idea es semejante que para  el .toc del √≠ndice, pero ahora se usa
+% extensi√≥n .lof (List Of Figures) con la informaci√≥n de las figuras.
+
+
+\ifpdf
+   \pdfbookmark[1]{\'Indice de anexos}{indice de anexos}
+\fi
+
+\cabeceraEspecial{\'Indice de anexos}
+
+\renewcommand{\listfigurename}{\'INDICE DE ANEXOS}
+\listoffigures
+
+\newpage
+
 % Variable local para emacs, para  que encuentre el fichero maestro de
-% compilaciÛn y funcionen mejor algunas teclas r·pidas de AucTeX
+% compilaci√≥n y funcionen mejor algunas teclas rÔøΩpidas de AucTeX
 
 %%%
 %%% Local Variables:

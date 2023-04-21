@@ -26,38 +26,38 @@
 %
 %---------------------------------------------------------------------
 %
-% Contiene  los  comandos  para  generar  el índice  de  palabras  del
+% Contiene  los  comandos  para  generar  el Ã­ndice  de  palabras  del
 % documento.
 %
 %---------------------------------------------------------------------
 %
-% NOTA IMPORTANTE: el  soporte en TeXiS para el  índice de palabras es
+% NOTA IMPORTANTE: el  soporte en TeXiS para el  Ã­ndice de palabras es
 % embrionario, y  de hecho  ni siquiera se  describe en el  manual. Se
-% proporciona  una infraestructura  básica (sin  terminar)  para ello,
-% pero  no ha  sido usada  "en producción".  De hecho,  a pesar  de la
+% proporciona  una infraestructura  bÃ¡sica (sin  terminar)  para ello,
+% pero  no ha  sido usada  "en producciÃ³n".  De hecho,  a pesar  de la
 % existencia de  este fichero, *no* se incluye  en Tesis.tex. Consulta
-% la documentación en TeXiS_pream.tex para más información.
+% la documentaciÃ³n en TeXiS_pream.tex para mï¿½s informaciÃ³n.
 %
 %---------------------------------------------------------------------
 
 
-% Si se  va a generar  la tabla de  contenidos (el índice  habitual) y
-% también vamos a  generar el índice de palabras  (ambas decisiones se
-% toman en  función de  la definición  o no de  un par  de constantes,
-% puedes consultar modo.tex para más información), entonces metemos en
-% la tabla de contenidos una  entrada para marcar la página donde está
-% el índice de palabras.
+% Si se  va a generar  la tabla de  contenidos (el Ã­ndice  habitual) y
+% tambiï¿½n vamos a  generar el Ã­ndice de palabras  (ambas decisiones se
+% toman en  funciÃ³n de  la definiciÃ³n  o no de  un par  de constantes,
+% puedes consultar modo.tex para mï¿½s informaciÃ³n), entonces metemos en
+% la tabla de contenidos una  entrada para marcar la pÃ¡gina donde estï¿½
+% el Ã­ndice de palabras.
 
 \ifx\generatoc\undefined
 \else
    \addcontentsline{toc}{chapter}{\indexname}
 \fi
 
-% Generamos el índice
+% Generamos el Ã­ndice
 \printindex
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
-% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+% compilaciÃ³n y funcionen mejor algunas teclas rï¿½pidas de AucTeX
 
 %%%
 %%% Local Variables:

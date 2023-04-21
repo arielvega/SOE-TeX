@@ -339,34 +339,6 @@
 
 %\end{cambiamargen}
 
-\newpage
-
-% Página que en la cara de detrás del folio de la portada.
-% Ponemos que el documento esta maquetado con TeXiS y la
-% aclaración de que debe imprimirse a doble cara.
-\thispagestyle{empty}
-\mbox{ }
-\vfill%space*{4cm}
-\begin{small} 
-\begin{center}
-\ifx\noTeXiSCreditsVal\undefined
-  Documento maquetado con \texis\ v.\texisVer.
-\else
-\mbox{ }
-\fi
-\end{center}
-\end{small}
-\vspace*{2cm}
-\begin{small} 
-\begin{center}
-\ifx\explicacionDobleCaraVal\undefined
-\mbox{ }
-\else
-\noindent Este documento est� preparado para ser imprimido a doble
-cara.
-\fi
-\end{center}
-\end{small}
 
 %%%
 % Segunda portada
@@ -377,51 +349,6 @@ cara.
 \thispagestyle{empty}
 
 \mbox{ }
-
-\begin{Huge}
-\begin{center}
-\tituloPortadaVal
-\end{center}
-\end{Huge}
-
-\vfill
-
-\begin{large}
-\begin{center}
-\textoPrimerSubtituloPortadaVal
-\\ \mbox{ } \\ \mbox{ } \\ 
-\textoSegundoSubtituloPortadaVal \\ [0.3em]
-\end{center}
-\end{large}
-
-\vfill
-
-\begin{large}
-\begin{center}
-\textbf{\institucionVal}\\[0.2em]
-    \mbox{ }  \\
-\textbf{\fechaPublicacionVal}
-\end{center}
-\end{large}
-
-
-\newpage
-\thispagestyle{empty}
-\mbox{ }
-
-% Información del ISBN y copyright
-\vskip 13cm
-\ifx\copyrightInfoVal\undefined
-\mbox{ }
-\else
-Copyright \textcopyright\ \copyrightInfoVal
-\fi
-\vskip 3cm
-\ifx\isbnVal\undefined
-\mbox{ }
-\else
-ISBN \isbnVal
-\fi
 
 } % \newcommand{\makeCover}
 

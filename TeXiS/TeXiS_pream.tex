@@ -27,40 +27,40 @@
 %---------------------------------------------------------------------
 %
 % Contiene la parte inicial del documento, antes del
-% \begin{document}. Carga los paquetes que se utilizar�n.
+% \begin{document}. Carga los paquetes que se utilizarán.
 %
 %---------------------------------------------------------------------
 
 % El paquete verbatim  es utilizado por uno de  los comandos definidos
 % en TeXiS.  Aunque  el propio estilo indica que  necesita ese paquete
-% con \RequirePackage, lo  hacemos "expl�cito" incluy�ndolo aqué antes
+% con \RequirePackage, lo  hacemos "explícito" incluyéndolo aqué antes
 % de incluir nuestro paquete.  Es necesario �nicamente para el comando
-% "example",  espec�fico del  manual y  que con  toda seguridad  no se
-% necesitar� en  ning�n otro tipo  de documento (Tesis, etc.),  por lo
-% que si por alguna raz�n  la inclusi�n de este paquete interfiere con
+% "example",  específico del  manual y  que con  toda seguridad  no se
+% necesitará en  ningún otro tipo  de documento (Tesis, etc.),  por lo
+% que si por alguna razón  la inclusión de este paquete interfiere con
 % otros y se desea no tener que incluirlo, se puede cambiar TeXiS.sty,
 % y eliminar el comando example.
 \usepackage{verbatim}
 
 % El  paquete  "layout" es  de  "depuración".  Sirve  para definir  el
 % comando \layout que puedes meter  en cualquier sitio del documento y
-% te genera  un par de páginas  con un gr�fico sobre  la estructura de
-% las  páginas,   es  decir,  con  información   sobre  los  m�rgenes,
+% te genera  un par de páginas  con un gráfico sobre  la estructura de
+% las  páginas,   es  decir,  con  información   sobre  los  márgenes,
 % posiciones de las notas a pie, los encabezados, y demás. Recibe como
-% par�metro un  idioma que  le sirve para  mostrar "la leyenda"  en un
-% idioma diferente al ingl�s.
+% parámetro un  idioma que  le sirve para  mostrar "la leyenda"  en un
+% idioma diferente al inglés.
 
 %\usepackage[spanish]{layout}
 
 % El  paquete  glosstex  te  permite  generar listas  de  acr�nimos  y
-% glosarios.  En  realidad  te   permite  crear  listas  m�ltiples  de
+% glosarios.  En  realidad  te   permite  crear  listas  múltiples  de
 % cualquier cosa,  con tal de que  des un identificador  a cada lista.
 % Luego de  manera predeterminada controla  dos listas, una  de nombre
-% "acr" pensada para acr�nimos, y otra "glo" para el glosario.
+% "acr" pensada para acrónimos, y otra "glo" para el glosario.
 
 %
 % La idea  es tener uno o  varios ficheros externos  donde se mantiene
-% una "base  de datos" de acr�nimos,  de palabras para  el glosario, o
+% una "base  de datos" de acrónimos,  de palabras para  el glosario, o
 % de, en  general, entradas  para cualquiera de  la lista  de t�rminos
 % gestionadas por glosstex. Esos ficheros normalmente llevan extensi�n
 % .gdf (Glossary  Data File, supongo),  y, por aclarar,  son similares
@@ -98,7 +98,7 @@
 %
 % Lo de <lista> es opcional. Si no se especifica, se entiende "glo",
 % que se supone que contiene el glosario normal. El soporte "nativo"
-% para la lista de acr�nimos queda patente porque para a�adir uno
+% para la lista de acrónimos queda patente porque para añadir uno
 % basta con:
 %
 %  \acronym{<etiqueta>}
@@ -118,14 +118,14 @@
 %
 % Una cosa interesante es en el uso de acr�nimos. Al igual que podemos
 % utilizar  con natbib cosas  como \citeyear  o \citeauthor,  con esto
-% podemos  hacer \ac{<etiqueta>},  y el  sistema te  pone  el acr�nimo
-% autom�ticamente.  Esto  no  parece   muy  �til,  si  se  piensa  que
-% normalmente el  acr�nimo ser� igual a  la etiqueta ;-)  La gracia es
-% que, además,  la primera vez que  se hace, te  pone entre par�ntesis
+% podemos  hacer \ac{<etiqueta>},  y el  sistema te  pone  el acrónimo
+% automáticamente.  Esto  no  parece   muy  �til,  si  se  piensa  que
+% normalmente el  acrónimo será igual a  la etiqueta ;-)  La gracia es
+% que, además,  la primera vez que  se hace, te  pone entre paréntesis
 % tambi�n la forma larga 8-)
 %
-% Tambi�n puedes usar \acf si quieres  que te aparezca las siglas y el
-% significado  entre  par�ntesis en  alg�n  momento.  En realidad  hay
+% También puedes usar \acf si quieres  que te aparezca las siglas y el
+% significado  entre  paréntesis en  algún  momento.  En realidad  hay
 % muchas más cosas, pero no las he mirado todas.
 %
 % http://www.ctan.org/tex-archive/help/Catalogue/entries/glosstex.html
@@ -142,33 +142,33 @@
   \usepackage{glosstex}
 \fi
 
-% shortvrb supuestamente define algunas macros cómodas como car�cteres
+% shortvrb supuestamente define algunas macros cómodas como carácteres
 % de escape.  Por ejemplo, para poner  un < normalmente  hay que hacer
 % una  ecuación:   $<$.  Este   paquete  define  algunas   macros  más
 % intuitivas, en este caso bastaría  con \< De igual forma, para poner
-% algo en  verbatim, la versi�n  larga es \texttt{blabla},  la versi�n
+% algo en  verbatim, la versión  larga es \texttt{blabla},  la versión
 % corta es  \verb+blabla+ (el +  puede sustituirse por  cualquier otra
 % cosa,  como un  |  ), y  con  este paquete  basta  con |blabla|  (es
-% equivalente a \verb|blabla|).  Pero vamos... a m� no me funciona :-/
+% equivalente a \verb|blabla|).  Pero vamos... a mí no me funciona :-/
 
 \usepackage{shortvrb}
 
-% Modifica la codificación de  entrada para LaTeX. B�sicamente permite
-% escribir cosas con acentos (�) y  �l solo lo sustituye por \'a. Para
-% eso, se especifica  en el primer par�metro la  página de códigos que
+% Modifica la codificación de  entrada para LaTeX. Básicamente permite
+% escribir cosas con acentos (á) y  él solo lo sustituye por \'a. Para
+% eso, se especifica  en el primer parámetro la  página de códigos que
 % estamos utilizando (latin1  significa ISO Latin 1, o  sea ISO 8859-1
 % supongo). Para cada página de códigos (en nuestro caso latin1) tiene
-% un fichero de definiciones (.def)  en el que mapea cada car�cter por
+% un fichero de definiciones (.def)  en el que mapea cada carácter por
 % encima del 128 a una orden LaTeX.
 %
 % Otra posible opción sería indicar utf8 (o utf8x) en lugar de latin1,
-% que podría  resultar �til para  aquellos que prefieran  escribir sus
+% que podría  resultar útil para  aquellos que prefieran  escribir sus
 % fuentes  en  UTF-8 (como  tiende  a  ocurrir  actualmente de  manera
-% predeterminada  en  Ubuntu). No  obstante,  una  b�squeda r�pida  en
+% predeterminada  en  Ubuntu). No  obstante,  una  búsqueda rápida  en
 % google parece indicar  que el soporte para fuentes  TeX con UTF-8 no
 % está demasiado  bien soportado y  podría dar algunos  problemas.  En
-% TeXiS, además, seguro que generar� conflictos, dado que si se indica
-% aqué utf8  se asumir� que  *todo* usa UTF-8, inclu�dos  los ficheros
+% TeXiS, además, seguro que generará conflictos, dado que si se indica
+% aqué utf8  se asumirá que  *todo* usa UTF-8, inclu�dos  los ficheros
 % del propio  TeXiS que en realidad  están con ISO  8859-1. Por tanto,
 % usa  utf8  *bajo tu  propia  responsabilidad*.  TeXiS, desde  luego,
 % recomienda el uso de ISO 8859-1.
@@ -182,16 +182,16 @@
 % \citeauthor{ref} para los autores... Hay un mont�n de posibilidades.
 % Puedes ver información en http://merkel.zoneo.net/Latex/natbib.php
 %
-% Es importante incluirlo ANTES de  babel. Si primero se a�ade babel y
+% Es importante incluirlo ANTES de  babel. Si primero se añade babel y
 % luego natbib,  cuando se tienen apellidos  "compuestos" (por ejemplo
-% "Du  Boulay" natbib  a�ade  un  ~ de  separación  para convertir  al
+% "Du  Boulay" natbib  añade  un  ~ de  separación  para convertir  al
 % espacio  en un espacio  no separable  en dos  líneas, pero  al tener
 % activado  babel  el ~  aparece  en lugar  de  salir  el espacio.  En
 % cualquier  caso,  sigue  existiendo  un potencial  problema.  Natbib
-% abrevia los  nombres poniendo �nicamente las  iniciales (por ejemplo
+% abrevia los  nombres poniendo únicamente las  iniciales (por ejemplo
 % para  el nombre  compuesto Francisco  Nunes Ferreira  pone Ferreira,
-% F. N.). El  problema es que tambi�n pone la ~  para separar, de modo
-% que sale Ferreira F.�. El problema está en que Babel autom�ticamente
+% F. N.). El  problema es que también pone la ~  para separar, de modo
+% que sale Ferreira F.Ñ. El problema está en que Babel automáticamente
 % da significado  a ~n y lo  sustituye sin que le  digamos nada... hay
 % más  información en  el comentario  de babel  y  en TeXiS_bib.tex
 % http://chico.rediris.es/cgi-bin/wa?A2=ind0601&L=es-tex&D=0&P=1989
@@ -209,9 +209,9 @@
 \usepackage[spanish,activeacute]{babel}
 
 % El paquete url sirve para poder  poner direcciones Web y no morir en
-% el intento,  sobre todo  en la bibliografía.   Es �til porque  si la
+% el intento,  sobre todo  en la bibliografía.   Es útil porque  si la
 % dirección  no entra  en una  línea,  la divide  de forma  coherente.
-% Además en  la bibliografía tambi�n  cambia el formato de  la fuente.
+% Además en  la bibliografía también  cambia el formato de  la fuente.
 % Se utiliza poniendo la  dirección con \url{http://...}  Tambi�n vale
 % para direcciones de correo, etc.
 % No conviene  quitarlo, porque con  casi toda seguridad, al  menos la
@@ -221,7 +221,7 @@
 
 % El documento está  pensado para ser compilado o  bien con pdflatex o
 % bien con  latex. Algunas  cosas sólo se  soportan si se  compila con
-% pdflatex (por  ejemplo, a�adir en  el "índice del documento"  PDF un
+% pdflatex (por  ejemplo, añadir en  el "índice del documento"  PDF un
 % título para una sección para luego verlo cuando se ve en el visor de
 % PDF el  índice). Para  meter cómodamente las  líneas que  sólo deben
 % "ejecutarse" si  se compila el  documento con pdflatex  definimos un
@@ -247,7 +247,7 @@
 % aparezcan rodeados de un marco que queda horrible.
 %
 % La opción "pdfpagelabels"  sirve para que en el  cuadrito del n�mero
-% de página del Adobe Acrobat  salga el n�mero de "página l�gico", por
+% de página del Adobe Acrobat  salga el número de "página lógico", por
 % ejemplo  "v (5  de  180)"  (con n�mero  romano  porque al  principio
 % empieza a numerarse así).
 
@@ -275,7 +275,7 @@
 % mencionaban. Esto aparece en algunos libros, permitiendo la b�squeda
 % r�pida de los lugares donde se habla de ciertas cosas.
 %
-% El problema  de hacer  dicho índice no  es sólo "tecnol�gico"  en lo
+% El problema  de hacer  dicho índice no  es sólo "tecnológico"  en lo
 % referente al  uso de  LaTeX, sino  tambi�n a la  hora de  marcar qué
 % palabras (y en qué lugares) se quieren a�adir a dicho índice.
 %
@@ -290,7 +290,7 @@
 % TeXiS, por  tanto, no menciona  nada de este asunto,  aunque dejamos
 % aqué esa configuración original del soporte b�sico.
 %
-% En realidad, para a�adir un índice de palabras bastaría con:
+% En realidad, para añadir un índice de palabras bastaría con:
 %
 %    - Modificar la parte final de Tesis.tex, e incluir siempre
 %      TeXiS/TeXiS_indice (ahora su inclusi�n está comentada).
@@ -306,28 +306,28 @@
 
 % Permite crear  índices (de palabras)  en LaTeX (es decir,  el índice
 % que suele  haber al final de  los libros diciendo en  qué páginas se
-% habla de qué t�rminos). La  generación no es una cosa trivial...  Lo
-% primero que hay que hacer  es poner '\makeindex' en el pre�mbulo del
+% habla de qué términos). La  generación no es una cosa trivial...  Lo
+% primero que hay que hacer  es poner '\makeindex' en el preámbulo del
 % documento (antes del  \begin{document}), luego poner \index{entrada}
 % a lo largo  de todo el documento para  indicar qué palabras queremos
-% que  aparezcan en  el índice  tem�tico.  Por �ltimo,  hay que  poner
+% que  aparezcan en  el índice  temático.  Por último,  hay que  poner
 % \printindex en  el lugar donde queramos  que se genere  y muestre el
 % índice.
 
 % Pero  eso no  es todo...  en realidad  la generación  del  índice se
 % realiza con  una herramienta externa a LaTeX  llamada makeindex (que
-% funciona  con  la  misma  "filosof�a"  que bibtex,  como  una  etapa
+% funciona  con  la  misma  "filosofía"  que bibtex,  como  una  etapa
 % posterior).  Total, que  hay que ejecutar LaTeX una  primera vez, lo
-% que  genera un  fichero  auxiliar  con extensi�n  .idx  con toda  la
+% que  genera un  fichero  auxiliar  con extensión  .idx  con toda  la
 % información sobre las  palabras que deben salir en  el índice. Luego
 % se ejecuta  MakeIndex, que recoge  ese fichero y utiliza  un fichero
-% con extensi�n  .ist con información  sobre estilo para  generar otro
-% fichero,   esta   vez   con   extensi�n  .ind   (que   supongo   que
-% conceptualmente es  semejante al "bbl"  de BibTeX).  Por  �ltimo, se
+% con extensión  .ist con información  sobre estilo para  generar otro
+% fichero,   esta   vez   con   extensión  .ind   (que   supongo   que
+% conceptualmente es  semejante al "bbl"  de BibTeX).  Por  último, se
 % vuelve a  ejecutar LaTeX que  recompila el fichero y,  utilizando el
-% .ind, mete por f�n el índice bueno.
+% .ind, mete por fín el índice bueno.
 
-% Aconsejan NO  poner los \index  seg�n vas escribiendo  el documento,
+% Aconsejan NO  poner los \index  según vas escribiendo  el documento,
 % porque el índice que te queda seguramente sea un poco malo. En lugar
 % de eso  dicen que utilices  "delatex" para sacar todas  las palabras
 % que utilizas en tu  documento, luego las "limpies" decidiendo cuales
@@ -345,7 +345,7 @@
 
 
 % Paquete de  depuración. Se si utiliza,  en el margen  de cada página
-% aparecen  las palabras  que se  a�adir�n  al índice  de esa  página.
+% aparecen  las palabras  que se  añadirán  al índice  de esa  página.
 % Pero... parece que no funciona con el pdflatex de Linux :'( En lugar
 % de sacar las palabras en la esquina de la página la saca en el sitio
 % donde están insertadas, en mitad del párrafo... y claro, es un tanto
@@ -366,7 +366,7 @@
 
 % Para pedir que se genere  la información para el índice de palabras.
 % Para  no  ralentizar la  compilación,  sólo  se  genera cuando  está
-% definido el s�mbolo correspondiente.
+% definido el símbolo correspondiente.
 \ifx\generaindice\undefined
 \else
 \makeindex
@@ -398,7 +398,7 @@
 
 %
 % Para  poder poner  "subfiguras". El  paquete permite  incluir varias
-% figuras dentro  de un entorno  flotante (t�picamente una  figura), y
+% figuras dentro  de un entorno  flotante (típicamente una  figura), y
 % puede  etiquetar  cada  una  con  una letra,  y  asociar  diferentes
 % descripciones a cada una.
 %
@@ -427,7 +427,7 @@
 %  \label{Etiqueta para toda la figura}
 % \end{figure}
 %
-% El sistema  autom�ticamente decide cuando poner  la siguiente figura
+% El sistema  automáticamente decide cuando poner  la siguiente figura
 % al lado, o  en otra linea. Es  posible forzar a que se  ponga en una
 % linea nueva si se deja una linea en blanco en el .tex. Esto tiene la
 % repercusi�n  de que  no deberías  dejar lineas  en blanco  en ning�n
@@ -445,7 +445,7 @@
 %    \subfloat[..][..]{ ... }
 % [...]
 %
-% Por otro lado,  el \subfloat tiene dos "par�metros",  que se colocan
+% Por otro lado,  el \subfloat tiene dos "parámetros",  que se colocan
 % entre   corchetes    justo   después.   En    realidad   ambos   son
 % opcionales. Podríamos poner directamente:
 %
@@ -494,7 +494,7 @@
 % continuación  (cortar  y  pegar  de  la  documentación  del  paquete
 % subfig).
 %
-% Los dos par�metros que teníamos  antes para el \subfloat (caption, y
+% Los dos parámetros que teníamos  antes para el \subfloat (caption, y
 % caption para el índice) ahora se pasan de forma distinta:
 %
 % \begin{SubFloat}[texto indice]{Texto figura\label{<etiqueta>}
@@ -526,11 +526,11 @@
 % De esta  forma, se  hace que  el código en  el lstlisting  ocupe dos
 % quintas  partes del ancho  de la  página.  Se  podría pensar  que es
 % posible  utilizar  el  "par�metro"  linewidth  del  lstlisting,  que
-% permite     tambi�n     indicar      el     ancho     del     código
+% permite     también     indicar      el     ancho     del     código
 % (\begin{lstlisting}[frame=tb,linediwth=0.4\linewidth]; sin embargo,
 % eso  no es  posible ya  que ese  ancho es  utilizado por  el entorno
 % lstlisting para  dibujar el marco  y, si tiene activado  el "romper"
-% las líneas  autom�ticamente, para romperlas; si todas  las líneas de
+% las líneas  automáticamente, para romperlas; si todas  las líneas de
 % código  son más  cortas que  ese  espacio, el  espacio efectivo  del
 % código ser� el ancho de la línea más ancha.
 %
@@ -719,11 +719,15 @@
 % {\filleft} % texto del cuerpo alineado a la derecha
 % [\vspace{0.5mm} \bigrule \vspace{1cm}] % después del cuerpo, dejar espacio vertical y trazar línea horizontal gruesa
 
-\usepackage[margin=1in]{geometry}
+
+% Paquete que ayuda a establecer los márgenes.
+\usepackage{geometry}
+
+% Paquete  que permite  establece la fuente a Times New Roman
 \usepackage{mathptmx}
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
-% compilación y funcionen mejor algunas teclas r�pidas de AucTeX
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
 
 %%%
 %%% Local Variables:
