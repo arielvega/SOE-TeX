@@ -1,0 +1,23 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {}INTRODUCCI\'ON}{1}{chapter.0}%
+\contentsline {section}{\numberline {1}Antecedentes del problema}{1}{section.0.1}%
+\contentsline {section}{\numberline {2}Formulaci\'on del problema}{1}{section.0.2}%
+\contentsline {subsection}{\numberline {2.1}Objeto de estudio}{2}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {2.2}Campo de acci\'on}{2}{subsection.0.2.2}%
+\contentsline {section}{\numberline {3}Objetivos de la investigaci\'on}{2}{section.0.3}%
+\contentsline {subsection}{\numberline {3.1}Objetivo general}{2}{subsection.0.3.1}%
+\contentsline {subsection}{\numberline {3.2}Objetivos espec\'ificos}{2}{subsection.0.3.2}%
+\contentsline {section}{\numberline {4}Justificaci\'on de la investigaci\'on }{2}{section.0.4}%
+\contentsline {section}{\numberline {5}Formulaci\'on de la construcci\'on te\'orica. Hip\'otesis para Defender.}{2}{section.0.5}%
+\contentsline {subsection}{\numberline {5.1}Identificaci\'on de las variables}{2}{subsection.0.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Variable independiente}{2}{subsubsection.0.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Variable dependiente}{2}{subsubsection.0.5.1.2}%
+\contentsline {chapter}{\numberline {1}REFERENTES TE\'ORICOS}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Referencia a n\'ucleos te\'oricos a desarrollar en la investigaci\'on }{3}{section.1.1}%
+\contentsline {section}{Notas bibliogr\'aficas}{3}{section.1.1}%
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{3}{illustration.1.1}%
+\contentsline {part}{I\hspace {1em}Ap\'endices}{5}{part.1}%
+\contentsline {chapter}{\numberline {A}As\IeC {\'\i } se hizo...}{6}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Introducci\'on}{6}{section.Alph1.1}%
+\contentsline {part}{Bibliograf\IeC {\"\i }\IeC {\textquestiondown }\IeC {\textonehalf }a}{7}{appendix*.7}%
+\contentsline {chapter}{Lista de acr\'onimos}{8}{section*.8}%

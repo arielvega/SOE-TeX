@@ -25,8 +25,9 @@
 #
 #----------------------------------------------------------
 
-NOMBRE_LATEX = 'tesis'
-FICHEROS_GLOSARIO = acronimos.gdf
+makeall: makeperfil #maketesis
+	@echo compilado...
+
 # NO deberia ser igual que NOMBRE_LATEX
 # (es decir, si NOMBRE_LATEX es
 # "documento" NO pongas "documento.gdf"
@@ -34,24 +35,38 @@ FICHEROS_GLOSARIO = acronimos.gdf
 # Esto se debe a que make clean borra
 # NOMBRE_LATEX.g* que son los ficheros
 # auxiliares del glosario. Si coinciden
-# los nombres, �se borrar�n las fuentes!
+# los nombres, ¡se borrarán las fuentes!
+setperfil:
+	$(eval NOMBRE_LATEX = 'Perfil')
+	$(eval FICHEROS_GLOSARIO = $(NOMBRE_LATEX)_acronimos.gdf)
+
+settesis:
+	$(eval NOMBRE_LATEX = 'Tesis')
+	$(eval FICHEROS_GLOSARIO = $(NOMBRE_LATEX)_acronimos.gdf)
+
+
+makeperfil: setperfil pdflatex
+	@echo perfil compilado...
+
+maketesis: settesis pdflatex
+	@echo tesis compilado...
 
 #
 # Genera el documento utilizando pdflatex
 # 
-pdflatex:
+pdflatex: makeperfil
 	pdflatex $(NOMBRE_LATEX)
 	-bibtex $(NOMBRE_LATEX)
 	-glosstex $(NOMBRE_LATEX) $(FICHEROS_GLOSARIO)
 	-makeindex $(NOMBRE_LATEX).gxs -o $(NOMBRE_LATEX).glx -s glosstex.ist
-#	-makeindex $(NOMBRE_LATEX)   Si tuvieras �ndice de palabras (mira preambulo.tex)
+#	-makeindex $(NOMBRE_LATEX)   Si tuvieras índice de palabras (mira preambulo.tex)
 	pdflatex $(NOMBRE_LATEX)
 	pdflatex $(NOMBRE_LATEX)
-# El gui�n en cualquier comando indica que si dicho comando falla
-# (termina con una salida diferente de 0) la construcci�n del Make no
-# debe detenerse. Eso podr�a ocurrir en el makeindex si se est�
-# generando el PDF en modo "depuraci�n" en la que no se muestra el
-# �ndice para ahorrar tiempo.  Tambi�n se puso en bibtex porque al
+# El guión en cualquier comando indica que si dicho comando falla
+# (termina con una salida diferente de 0) la construcción del Make no
+# debe detenerse. Eso podría ocurrir en el makeindex si se está
+# generando el PDF en modo "depuración" en la que no se muestra el
+# índice para ahorrar tiempo.  También se puso en bibtex porque al
 # principio del todo no hab�a referencias, bibtex se quejaba, y paraba
 # toda la construcci�n.
 
@@ -71,8 +86,8 @@ latex: imagenesbitmap imagenesvectoriales
 	ps2pdf $(NOMBRE_LATEX).ps
 
 #
-# Prepara todas las im�genes del documento.
-# Para eso, convierte tanto las im�genes de
+# Prepara todas las imágenes del documento.
+# Para eso, convierte tanto las imágenes de
 # mapas de bits (.png y .jpg) como las
 # vectoriales (.pdf) a .eps para que LaTeX
 # las pueda usar.
@@ -129,15 +144,18 @@ clean:
 	@rm -f *.aux
 	@rm -f *.out
 	@rm -f *.exa
-	@echo Borrando los ficheros de generaci�n de �ndices de palabras...
+	@echo Borrando los ficheros de generación de índices de palabras...
 	@rm -f *.idx
 	@rm -f *.ilg
 	@rm -f *.ind
-	@echo Borrando los ficheros de generaci�n de tablas de contenidos...
+	@echo Borrando los ficheros de generación de tablas de contenidos...
 	@rm -f *.toc
 	@rm -f *.lof
 	@rm -f *.lot
-	@echo Borrando los ficheros de generaci�n de acr�nimos...
+	@rm -f *.loch
+	@rm -f *.loil
+	@rm -f *.loap
+	@echo Borrando los ficheros de generaci�n de acrónimos...
 	@rm -f $(NOMBRE_LATEX).g*
 	@echo Borrando los ficheros de salida...
 	@rm -f *.dvi
@@ -145,14 +163,19 @@ clean:
 	@echo Borrando los ficheros intermedios de BibTeX...
 	@rm -f *.bbl
 	@rm -f *.blg
+	@echo Borrando los ficheros de herramientas auxiliares...
+	@rm -f *.fdb_latexmk
+	@rm -f *.synctex*
+	@rm -f *.pdfsync
 	@echo Borrado recursivo de la infraestructura TeXiS...
 	@if [ -d TeXiS ]; then cd TeXiS; make clean; fi
-	@cd Cascaras; make clean
-	@echo Borrado recursivo de los cap�tulos...
+	@echo Borrado recursivo en las cáscaras...
+	@if [ -d Cascaras ]; then cd Cascaras; make clean; fi
+	@echo Borrado recursivo de los capítulos...
 	@if [ -d Capitulos ]; then cd Capitulos; make clean; fi
-	@echo Borrado recursivo de los ap�ndices...
+	@echo Borrado recursivo de los apéndices...
 	@if [ -d Apendices ]; then cd Apendices; make clean; fi
-	@echo Borrado recursivo de las im�genes...
+	@echo Borrado recursivo de las imágenes...
 	@if [ -d Imagenes/Bitmap ]; then cd Imagenes/Bitmap; make clean; fi
 	@cd Imagenes/Vectorial; make clean
 	@echo Borrando el fichero .zip con el estado actual
@@ -169,14 +192,15 @@ distclean: clean
 	@echo Borrando las copias de seguridad de los editores...
 	@rm -f *~
 	@rm -f *.backup
-	@echo Borrando los ficheros de distribuci�n...
+	@echo Borrando los ficheros de distribución...
 	@rm -f *.tar.gz
 	@echo Borrado recursivo de la infraestructura TeXiS...
 	@if [ -d TeXiS ]; then cd TeXiS; make distclean; fi
-	@cd Cascaras; make distclean
-	@echo Borrado recursivo en los cap�tulos...
+	@echo Borrado recursivo en las cáscaras...
+	@if [ -d Cascaras ]; then cd Cascaras; make distclean; fi
+	@echo Borrado recursivo en los capítulos...
 	@if [ -d Capitulos ]; then cd Capitulos; make distclean; fi
-	@echo Borrado recursivo en los ap�ndices...
+	@echo Borrado recursivo en los apéndices...
 	@if [ -d Apendices ]; then cd Apendices; make distclean; fi
 	@echo Limpiando las im�genes en formatos adicionales...
 	@if [ -d Imagenes/Bitmap ]; then cd Imagenes/Bitmap; make distclean; fi

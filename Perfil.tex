@@ -1,6 +1,6 @@
 % ----------------------------------------------------------------------
 %
-%                          Tesis.tex
+%                          Perfil.tex
 %
 %----------------------------------------------------------------------
 %
@@ -29,6 +29,8 @@
 
 \documentclass[12pt,letterpaper,oneside]{book}
 
+\newcommand{\proyecto}{Perfil}
+
 %
 % Definimos  el   comando  \compilaCapitulo,  que   luego  se  utiliza
 % (opcionalmente) en config.tex. Quedaría  mejor si también se definiera
@@ -56,14 +58,14 @@ TeXiS/TeXiS_pream,TeXiS/TeXiS_cab,TeXiS/TeXiS_bib,TeXiS/TeXiS_cover,%
 TeXiS/TeXiS_part%
 }
 \newcommand{\ficherosBasicosTexto}{%
-constantes,guionado,Cascaras/bibliografia,config%
+constantes,guionado,\proyecto/Cascaras/bibliografia,config%
 }
 \newcommand{\compilaCapitulo}[1]{%
-\includeonly{\ficherosBasicosTeXiS,\ficherosBasicosTexto,Capitulos/#1}%
+\includeonly{\ficherosBasicosTeXiS,\ficherosBasicosTexto,\proyecto/Capitulos/#1}%
 }
 
 \newcommand{\compilaApendice}[1]{%
-\includeonly{\ficherosBasicosTeXiS,\ficherosBasicosTexto,Apendices/#1}%
+\includeonly{\ficherosBasicosTeXiS,\ficherosBasicosTexto,\proyecto/Apendices/#1}%
 }
 
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -116,13 +118,7 @@ constantes,guionado,Cascaras/bibliografia,config%
 % (usando números romanos para esta primera fase).
 \frontmatter
 
-\include{Cascaras/cover}
-
-\include{Cascaras/dedicatoria}
-
-\include{Cascaras/agradecimientos}
-
-\include{Cascaras/resumen}
+\include{\proyecto/Cascaras/cover}
 
 \ifx\generatoc\undefined
 \else
@@ -134,8 +130,8 @@ constantes,guionado,Cascaras/bibliografia,config%
 \mainmatter
 \restauraCabecera
 
-\include{Capitulos/Parte1}
-\include{Capitulos/01Capitulo1}
+\include{\proyecto/Capitulos/00Introduccion}
+\include{\proyecto/Capitulos/01Capitulo1}
 %\include{...}
 %\include{...}
 %\include{...}
@@ -144,8 +140,8 @@ constantes,guionado,Cascaras/bibliografia,config%
 
 % Ap�ndices
 \appendix
-\include{Apendices/ParteApendices}
-\include{Apendices/01ApendiceA}
+\include{\proyecto/Apendices/ParteApendices}
+\include{\proyecto/Apendices/01ApendiceA}
 %\include{...}
 %\include{...}
 %\include{...}
@@ -156,7 +152,7 @@ constantes,guionado,Cascaras/bibliografia,config%
 % Bibliograf�a
 %
 
-\include{Cascaras/bibliografia}
+\include{\proyecto/Cascaras/bibliografia}
 
 %
 % �ndice de palabras
@@ -191,6 +187,6 @@ constantes,guionado,Cascaras/bibliografia,config%
 %
 % Final
 %
-\include{Cascaras/fin}
+\include{\proyecto/Cascaras/fin}
 
 \end{document}

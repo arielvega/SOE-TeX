@@ -1,10 +1,10 @@
 %---------------------------------------------------------------------
 %
-%                      dedicatoria.tex
+%                      fin.tex
 %
 %---------------------------------------------------------------------
 %
-% dedicatoria.tex
+% fin.tex
 % Copyright 2009 Marco Antonio Gomez-Martin, Pedro Pablo Gomez-Martin
 %
 % This file belongs to the TeXiS manual, a LaTeX template for writting
@@ -33,31 +33,67 @@
 %
 %---------------------------------------------------------------------
 %
-% Contiene la página de dedicatorias.
+% Contiene la última página
 %
 %---------------------------------------------------------------------
 
-\dedicatoriaUno{%
-\emph{
-Al duque de Béjar\\
-y\hspace*{10ex} \\
-a tí, lector carísimo%
-}%
-}
 
-\dedicatoriaDos{%
-\emph{%
-I can't go to a restaurant and\\%
-order food because I keep looking\\%
-at the fonts on the menu.\\%
-Donald Knuth%
-}%
-}
+% Ponemos el marcador en el PDF al nivel adecuado, dependiendo
+% de su hubo partes en el documento o no (si las hay, queremos
+% que aparezca "al mismo nivel" que las partes.
+\ifpdf
+\ifx\tienePartesTeXiS\undefined
+   \pdfbookmark[0]{Fin}{fin}
+\else
+   \pdfbookmark[-1]{Fin}{fin}
+\fi
+\fi
 
-\makeDedicatorias
+\thispagestyle{empty}\mbox{}
 
-% Variable local para emacs, para que encuentre el fichero
-% maestro de compilación
+\vspace*{4cm}
+
+\small
+
+\hfill \emph{--¿Qué te parece desto, Sancho? -- Dijo Don Quijote --}
+
+\hfill \emph{Bien podrán los encantadores quitarme la ventura,}
+
+\hfill \emph{pero el esfuerzo y el ánimo, será imposible.}
+
+\hfill 
+
+\hfill \emph{Segunda parte del Ingenioso Caballero} 
+
+\hfill \emph{Don Quijote de la Mancha}
+
+\hfill \emph{Miguel de Cervantes}
+
+\vfill%space*{4cm}
+
+\hfill \emph{--Buena está -- dijo Sancho --; fírmela vuestra merced.}
+
+\hfill \emph{--No es menester firmarla -- dijo Don Quijote--,}
+
+\hfill \emph{sino solamente poner mi rúbrica.}
+
+\hfill 
+
+\hfill \emph{Primera parte del Ingenioso Caballero} 
+
+\hfill \emph{Don Quijote de la Mancha}
+
+\hfill \emph{Miguel de Cervantes}
+
+
+\newpage
+\thispagestyle{empty}\mbox{}
+
+\newpage
+
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+
 %%%
 %%% Local Variables:
 %%% mode: latex

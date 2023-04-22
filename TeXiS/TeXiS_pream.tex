@@ -49,31 +49,30 @@
 % posiciones de las notas a pie, los encabezados, y demás. Recibe como
 % parámetro un  idioma que  le sirve para  mostrar "la leyenda"  en un
 % idioma diferente al inglés.
-
 %\usepackage[spanish]{layout}
 
-% El  paquete  glosstex  te  permite  generar listas  de  acr�nimos  y
+% El  paquete  glosstex  te  permite  generar listas  de  acrónimos  y
 % glosarios.  En  realidad  te   permite  crear  listas  múltiples  de
 % cualquier cosa,  con tal de que  des un identificador  a cada lista.
 % Luego de  manera predeterminada controla  dos listas, una  de nombre
 % "acr" pensada para acrónimos, y otra "glo" para el glosario.
-
+%
 %
 % La idea  es tener uno o  varios ficheros externos  donde se mantiene
 % una "base  de datos" de acrónimos,  de palabras para  el glosario, o
-% de, en  general, entradas  para cualquiera de  la lista  de t�rminos
-% gestionadas por glosstex. Esos ficheros normalmente llevan extensi�n
+% de, en  general, entradas  para cualquiera de  la lista  de términos
+% gestionadas por glosstex. Esos ficheros normalmente llevan extensión
 % .gdf (Glossary  Data File, supongo),  y, por aclarar,  son similares
 % conceptualmente a  los ficheros .bib. En cada  entrada se especifica
 % una etiqueta que  la identifica y que normalmente  se utiliza cuando
 % aparece dicha entrada en alguna de las listas en el documento final.
-% Tambi�n  puede opcionalmente  especificarse un  texto en  LaTeX para
+% También  puede opcionalmente  especificarse un  texto en  LaTeX para
 % dicha entrada si  queremos poner otra o darle  formato (por ejemplo,
 % si  queremos meter  en  el glosario  el  t�rmino LaTeX,  normalmente
 % querremos usar  como etiqueta  identificativa la cadena  LaTeX, pero
 % luego queremos  que al escribirlo  en el documento salga  su versi�n
 % pija conseguida  mediante \LaTeX{}). Tambi�n  tiene una "descripción
-% larga"  (�til dependiendo  de  la configuración)  y, finalmente,  la
+% larga"  (útil dependiendo  de  la configuración)  y, finalmente,  la
 % descripción de la entrada.
 %
 %
@@ -82,10 +81,10 @@
 %   @entry{LaTeX, \LaTeX{}} Herramienta basada en \TeX{} para
 %   facilitar la creación de documentación.
 %
-
+%
 % Puedes consultar  más información sobre  el formato en  el fichero
 % acronimos.gdf.
-
+%
 % La idea es tener tantos ficheros gdf como queramos, y reutilizarlos
 % entre todos los documentos que necesitemos crear. Posteriormente, a
 % lo largo de esos documentos, referenciamos su uso. En concreto,
@@ -103,7 +102,7 @@
 %
 %  \acronym{<etiqueta>}
 %
-% que es sin�nimo de \glosstex(acr){<etiqueta>}
+% que es sinónimo de \glosstex(acr){<etiqueta>}
 %
 % La  aparición   de  estos   comandos  ocasionan  la   generación  de
 % anotaciones en los ficheros .aux correspondientes. Esos .aux hay que
@@ -119,7 +118,7 @@
 % Una cosa interesante es en el uso de acr�nimos. Al igual que podemos
 % utilizar  con natbib cosas  como \citeyear  o \citeauthor,  con esto
 % podemos  hacer \ac{<etiqueta>},  y el  sistema te  pone  el acrónimo
-% automáticamente.  Esto  no  parece   muy  �til,  si  se  piensa  que
+% automáticamente.  Esto  no  parece   muy  útil,  si  se  piensa  que
 % normalmente el  acrónimo será igual a  la etiqueta ;-)  La gracia es
 % que, además,  la primera vez que  se hace, te  pone entre paréntesis
 % tambi�n la forma larga 8-)
@@ -130,7 +129,7 @@
 %
 % http://www.ctan.org/tex-archive/help/Catalogue/entries/glosstex.html
 \ifx\generaacronimos\undefined
-  % No queremos acr�nimos. Como no incluiremos el paquete glosstex
+  % No queremos acrónimos. Como no incluiremos el paquete glosstex
   % redefinimos sus comandos para que no cruja si se han usado.
   \newcommand{\glosstex}[1]{}
   \newcommand{\acronym}[1]{}
@@ -168,11 +167,12 @@
 % google parece indicar  que el soporte para fuentes  TeX con UTF-8 no
 % está demasiado  bien soportado y  podría dar algunos  problemas.  En
 % TeXiS, además, seguro que generará conflictos, dado que si se indica
-% aqué utf8  se asumirá que  *todo* usa UTF-8, inclu�dos  los ficheros
+% aqué utf8  se asumirá que  *todo* usa UTF-8, incluídos  los ficheros
 % del propio  TeXiS que en realidad  están con ISO  8859-1. Por tanto,
 % usa  utf8  *bajo tu  propia  responsabilidad*.  TeXiS, desde  luego,
 % recomienda el uso de ISO 8859-1.
 \usepackage[latin1]{inputenc}
+%\usepackage[utf8]{inputenc}
 
 % Incluimos el  estilo de bibliografía natbib, para  poder citarlas de
 % forma más compleja.  Por ejemplo,  \citep{ref} para que nos lo saque
@@ -236,27 +236,13 @@
 % Juego (solo make latex) :-p
 %\usepackage[mirror,invert]{crop}
 
-% Si estamos usando  pdflatex, queremos pedir que se  creen enlaces en
-% las  referencias  a figuras,  capítulos  y  bibliografía para  poder
-% "navegar" al visualizar el PDF. Tambi�n queremos que esos enlaces NO
-% aparezcan rodeados de un marco que queda horrible.
-%
-% La opción "pdfpagelabels"  sirve para que en el  cuadrito del n�mero
-% de página del Adobe Acrobat  salga el número de "página lógico", por
-% ejemplo  "v (5  de  180)"  (con n�mero  romano  porque al  principio
-% empieza a numerarse así).
-\ifpdf
-   \RequirePackage[pdfborder=0,colorlinks,hyperindex,pdfpagelabels]{hyperref}
-   \def\pdfBorderAttrs{/Border [0 0 0] } % Ningún borde en los enlaces
-\fi
-
 
 % Durante  la infancia  de TeXiS  (es decir,  cuando estábamos  en las
 % primeras etapas de la escritura de nuestras tesis), teníamos la idea
 % de tener índice de palabras, es decir una lista de palabras usadas a
 % lo   largo  del   documento,  junto   con  las   páginas   donde  se
 % mencionaban. Esto aparece en algunos libros, permitiendo la b�squeda
-% r�pida de los lugares donde se habla de ciertas cosas.
+% rápida de los lugares donde se habla de ciertas cosas.
 %
 % El problema  de hacer  dicho índice no  es sólo "tecnológico"  en lo
 % referente al  uso de  LaTeX, sino  también a la  hora de  marcar qué
@@ -372,7 +358,7 @@
 \fi
 
 
-% Para poder utilizar el entorno multicol, �til en los sitios donde se
+% Para poder utilizar el entorno multicol, útil en los sitios donde se
 % quieren poner dos figuras una al lado de la otra.
 \usepackage{multicol}
 
@@ -392,7 +378,7 @@
 %   \centering
 %   %
 %   \subfloat[<ParaElIndice1>][<Caption1>]{ 
-%      % Contenido para este "subelemento" (podr� ser una
+%      % Contenido para este "subelemento" (podrá ser una
 %      % figura, una tabla, o cualquier otra cosa).
 %      \includegraphics[width=5cm]{ficheroSinExtension}
 %      \label{fig:etiqueta1}
@@ -410,7 +396,7 @@
 % El sistema  automáticamente decide cuando poner  la siguiente figura
 % al lado, o  en otra linea. Es  posible forzar a que se  ponga en una
 % linea nueva si se deja una linea en blanco en el .tex. Esto tiene la
-% repercusi�n  de que  no deberías  dejar lineas  en blanco  en ning�n
+% repercusión  de que  no deberías  dejar lineas  en blanco  en ning�n
 % momento dentro  del entorno flotante,  para evitar que se  "salte de
 % linea"  en las  figuras.  Si quieres  por  legilibidad dejar  alguna
 % linea, pon un comentario vacio.
@@ -434,24 +420,24 @@
 % pero en ese caso no se etiquetar� con una letra.
 %
 % El texto que se pone entre los primeros corchetes se utiliza para el
-% índice de figuras. En teoría, se mostrar� en dicho índice primero la
+% índice de figuras. En teoría, se mostrará en dicho índice primero la
 % descripción global de la figura,  y luego la de cada subelemento. Si
 % no  quieres que  ocurra,  deja  en blanco  el  contenido del  primer
-% corchete. En la  pr�ctica... yo he puesto una cadena  y no ha salido
+% corchete. En la  práctica... yo he puesto una cadena  y no ha salido
 % en el índice.
 % El  segundo  corchete  recibe   el  texto  con  la  descripción  del
-% subelemento,   es  decir  lo   que  aparecer�   junto  a   la  letra
-% identificativa.  Si lo  dejas vac�o  (pero poniendo  los corchetes),
-% saldr� la letra, sin texto.  Si ni siquieras pones los corchetes, no
-% saldr� tampoco la letra.
+% subelemento,   es  decir  lo   que  aparecerá   junto  a   la  letra
+% identificativa.  Si lo  dejas vacío  (pero poniendo  los corchetes),
+% saldrá la letra, sin texto.  Si ni siquieras pones los corchetes, no
+% saldrá tampoco la letra.
 %
 % Para referenciar  uno de los subelementos  basta con \ref{etiqueta},
 % siendo  la   etiqueta  una  definida  mediante   \label  DENTRO  del
 % \subfloat. La  forma de salir  ser�, por ejemplo, 2.3a  Si prefieres
 % que salga  2.3 (a) (o quieres poner  "en la imagen (a)  de la figura
 % 2.3...")  puedes  utilizar  \subref{etiquitaDeSubelemento}.  \subref
-% escribir� el (a).  Combin�ndolo con la etiqueta global  de la figura
-% (del  entorno flotante contenedor,  vamos) que  mostrar� el  2.3 del
+% escribirá el (a).  Combinándolo con la etiqueta global  de la figura
+% (del  entorno flotante contenedor,  vamos) que  mostrará el  2.3 del
 % ejemplo, puedes hacer cosas como la anterior con facilidad.
 %
 % Se pueden hacer muchas más pijadas, pero esto debería ser suficiente
@@ -515,9 +501,9 @@
 % código será el ancho de la línea más ancha.
 %
 % Otra desagradable sorpresa surge  con los subfloat: existe un margen
-% a los  lados del �rea reservada  a la subfigura, para  que no queden
+% a los  lados del área reservada  a la subfigura, para  que no queden
 % todas  pegadas.   Esto  está  bien,  porque así  no  tienes  tú  que
-% encargarte de  definir el espacio; simplemente  decides cu�nto ocupa
+% encargarte de  definir el espacio; simplemente  decides cuánto ocupa
 % de ancho cada  subfigura, y él se encarga de  colocarlo todo. Lo que
 % ocurre es que parece no tener  en cuenta que, cuando a la derecha de
 % un subfloat NO hay otro (porque es el último de la "línea"), _sigue_
@@ -545,7 +531,7 @@
 
 
 % Para poder  incluir código  fuente resaltado fácilmente.   El tamaño
-% básico de la letra, peque�o.
+% básico de la letra, pequeño.
 \usepackage{listings}
 \lstset{basicstyle=\small}
 \lstset{showstringspaces=false}
@@ -718,11 +704,28 @@
 \usepackage[subfigure,titles]{tocloft}
 
 
-% Elpaquete "float" se usa para definir nuevos elementos flotantes que
+% El paquete "float" se usa para definir nuevos elementos flotantes que
 % funcionan como tablas o figuras.
 \usepackage{float}
 
+% "soul" se usa para resaltar texto, necesita el paquete "color", sino
+% solo va a subrayar el texto en vez de resaltar
+\usepackage{color}
+\usepackage{soul}
 
+% Si estamos usando  pdflatex, queremos pedir que se  creen enlaces en
+% las  referencias  a figuras,  capítulos  y  bibliografía para  poder
+% "navegar" al visualizar el PDF. Tambien queremos que esos enlaces NO
+% aparezcan rodeados de un marco que queda horrible.
+%
+% La opción "pdfpagelabels"  sirve para que en el  cuadrito del número
+% de página del Adobe Acrobat  salga el número de "página lógico", por
+% ejemplo  "v (5  de  180)"  (con número  romano  porque al  principio
+% empieza a numerarse así).
+\ifpdf
+   \RequirePackage[pdfborder=0,colorlinks,hyperindex,pdfpagelabels]{hyperref}
+   \def\pdfBorderAttrs{/Border [0 0 0] } % Ningún borde en los enlaces
+\fi
 % Cuando se  genera el  índice, se necesita el paquete "hyperref", que
 % permite referencias  (o enlaces) en el propio  documento. El paquete
 % aparece como \RequirePackage cuando se está usando pdflatex, gracias

@@ -1,0 +1,199 @@
+%---------------------------------------------------------------------
+%
+%                          configCover.tex
+%
+%---------------------------------------------------------------------
+%
+% cover.tex
+% Copyright 2009 Marco Antonio Gomez-Martin, Pedro Pablo Gomez-Martin
+%
+% This file belongs to the TeXiS manual, a LaTeX template for writting
+% Thesis and other documents. The complete last TeXiS package can
+% be obtained from http://gaia.fdi.ucm.es/projects/texis/
+%
+% Although the TeXiS template itself is distributed under the 
+% conditions of the LaTeX Project Public License
+% (http://www.latex-project.org/lppl.txt), the manual content
+% uses the CC-BY-SA license that stays that you are free:
+%
+%    - to share & to copy, distribute and transmit the work
+%    - to remix and to adapt the work
+%
+% under the following conditions:
+%
+%    - Attribution: you must attribute the work in the manner
+%      specified by the author or licensor (but not in any way that
+%      suggests that they endorse you or your use of the work).
+%    - Share Alike: if you alter, transform, or build upon this
+%      work, you may distribute the resulting work only under the
+%      same, similar or a compatible license.
+%
+% The complete license is available in
+% http://creativecommons.org/licenses/by-sa/3.0/legalcode
+%
+%---------------------------------------------------------------------
+%
+% Fichero que contiene la configuración de la portada y de la 
+% primera hoja del documento.
+%
+%---------------------------------------------------------------------
+
+
+% Pueden configurarse todos los elementos del contenido de la portada
+% utilizando comandos.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Institución/departamento asociado al documento.
+% \institucion{Nombre}
+% Puede tener varias l�neas. Se utiliza en las dos portadas.
+% Si no se indica aparecer� vac�o.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\institucion{%
+UNIVERSIDAD AUT\'ONOMA ``GABRIEL REN\'E MORENO''\\
+FACULTAD DE INGENIER\'IA EN CIENCIAS DE LA COMPUTACI\'ON Y TELECOMUNICACIONES\\
+\vspace{36pt}
+``UAGRM SCHOOL OF ENGINEERING''
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título del grado:
+% \tituloGrado{titulo}
+% Nota:
+% Aquí se coloca el título del grado al que se va a optar.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tituloGrado{%
+MAESTR\'IA EN DIRECCI\'ON ESTRAT\'EGICA EN INGENIER\'IA DE SOFTWARE
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título del documento:
+% \tituloPortada{titulo}
+% Nota:
+% Si no se define se utiliza el del \titulo. Este comando permite
+% cambiar el título de forma que se especifiquen d�nde se quieren
+% los retornos de carro cuando se utilizan fuentes grandes.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\tituloPortada{%
+%Marco de trabajo para predecir y mitigar posibles ca\'idas de servicio
+% usando Machine Learning aplicado sobre los sistemas LMS para soportar
+% alto tr\'afico de la Universidad Aut\'onoma Gabriel Ren\'e Moreno%
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Subtítulo del documento:
+% \subtituloPortada{subtitulo}
+% Nota:
+% Si no se define se utiliza el del \titulo. Este comando permite
+% cambiar el título de forma que se especifiquen dónde se quieren
+% los retornos de carro cuando se utilizan fuentes grandes.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtituloPortada{%
+TRABAJO FINAL DE GRADO BAJO LA MODALIDAD DE TESIS PARA OPTAR AL T\'ITULO DE MAESTRO EN CIENCIAS %
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Autor del documento:
+% \autorPortada{Nombre}
+% Se utiliza en la portada y en el valor por defecto del
+% primer subtítulo de la segunda portada.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\autorPortada{Luis Ariel Vega Soliz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lugar de publicación:
+% \lugarPublicacion{Lugar}
+% Puede ser vacío. Aparece en la penúltima línea de ambas portadas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lugarPublicacion{Santa Cruz, Bolivia}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fecha de publicación:
+% \fechaPublicacion{Fecha}
+% Puede ser vacío. Aparece en la última línea de ambas portadas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fechaPublicacion{Noviembre, 2023}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Imagen de la portada (y escala)
+% \imagenPortada{Fichero}
+% \escalaImagenPortada{Numero}
+% Si no se especifica, se utiliza la imagen TODO.pdf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\imagenPortada{Imagenes/Vectorial/UAGRMEscudoSOE}
+\escalaImagenPortada{.8}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tipo de documento.
+% \tipoDocumento{Tipo}
+% Para el texto justo debajo del escudo.
+% Si no se indica, se utiliza "TESIS DOCTORAL".
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tipoDocumento{TESIS DE MAESTR\'IA}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Director del trabajo.
+% \directorPortada{Nombre}
+% Se utiliza para el valor por defecto del segundo subtítulo, donde
+% se indica quién es el director del trabajo.
+% Si se fuerza un subtítulo distinto, no hace falta definirlo.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\directorPortada{Walterio Malatesta}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Texto del primer subt�tulo de la segunda portada.
+% \textoPrimerSubtituloPortada{Texto}
+% Para configurar el primer "texto libre" de la segunda portada.
+% Si no se especifica se indica "Memoria que presenta para optar al
+% t�tulo de Doctor en Inform�tica" seguido del \autorPortada.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textoPrimerSubtituloPortada{%
+\textit{Informe t�cnico del departamento}  \\ [0.3em]
+\textbf{Ingenier�a del Software e Inteligencia Artificial} \\ [0.3em]
+\textbf{IT/2009/3}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Texto del segundo subt�tulo de la segunda portada.
+% \textoSegundoSubtituloPortada{Texto}
+% Para configurar el segundo "texto libre" de la segunda portada.
+% Si no se especifica se indica "Dirigida por el Doctor" seguido
+% del \directorPortada.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textoSegundoSubtituloPortada{%
+\textit{Versi�n \texisVer}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \explicacionDobleCara
+% Si se utiliza, se aclara que el documento est� preparado para la
+% impresi�n a doble cara.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\explicacionDobleCara
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \isbn
+% Si se utiliza, aparecer� el ISBN detr�s de la segunda portada.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\isbn{978-84-692-7109-4}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \copyrightInfo
+% Si se utiliza, aparecer� información de los derechos de copyright
+% detr�s de la segunda portada.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\copyrightInfo{\autor}
+
+
+%%
+%% Creamos las portadas
+%%
+\makeCover
+
+% Variable local para emacs, para que encuentre el fichero
+% maestro de compilación
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:

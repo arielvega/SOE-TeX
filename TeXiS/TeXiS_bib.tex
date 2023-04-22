@@ -26,19 +26,19 @@
 %
 %---------------------------------------------------------------------
 %
-% Fichero que contiene la generación de la bibliografía. En principio,
-% no haría falta tenerlo en  un fichero separado, pero como permitimos
-% añadir una frase célebre antes  de la primera cita, la configuración
-% ya  no es  trivial.  Para  "ocultar" la  fontanería  de LaTeX,  está
-% separada  la  configuración  de  los  parámetros  de  la  generación
-% concreta de la bibliografía. La configuración está en el "directorio
-% del usuario" (Cascaras), mientras  que la generación se encuentra en
+% Fichero que contiene la generaciï¿½n de la bibliografï¿½a. En principio,
+% no harï¿½a falta tenerlo en  un fichero separado, pero como permitimos
+% aï¿½adir una frase cï¿½lebre antes  de la primera cita, la configuraciï¿½n
+% ya  no es  trivial.  Para  "ocultar" la  fontanerï¿½a  de LaTeX,  estï¿½
+% separada  la  configuraciï¿½n  de  los  parï¿½metros  de  la  generaciï¿½n
+% concreta de la bibliografï¿½a. La configuraciï¿½n estï¿½ en el "directorio
+% del usuario" (Cascaras), mientras  que la generaciï¿½n se encuentra en
 % el directorio TeXiS (este fichero).
 %
 %---------------------------------------------------------------------
 
 %%%
-% Gestión de la configuración
+% Gestiï¿½n de la configuraciï¿½n
 %%%
 
 % Ficheros .bib
@@ -47,95 +47,95 @@
 \def\ficherosBibliografia{#1}
 }
 
-% Frase célebre
+% Frase cï¿½lebre
 \def\citaBibliografia{}
 \newcommand{\setCitaBibliografia}[1]{
 \def\citaBibliografia{#1}
 }
 
 %%%
-% Configuración terminada
+% Configuraciï¿½n terminada
 %%%
 
 %%%
-%% COMANDO PARA CREAR LA BIBLIOGRAFÍA.
-%% CONTIENE TODO EL CÓDIGO LaTeX
+%% COMANDO PARA CREAR LA BIBLIOGRAFï¿½A.
+%% CONTIENE TODO EL Cï¿½DIGO LaTeX
 %%%
 \newcommand{\makeBib}{
 
 %
-% Queremos que  tras el título del  capítulo ("Bibliografía") aparezca
-% una frase célebre,  igual que en el resto  de capítulos. El problema
-% es que  aquí no ponemos  nosotros a mano  el \chapter{Bibliografía},
-% sino que lo mete él automáticamente.
+% Queremos que  tras el tï¿½tulo del  capï¿½tulo ("Bibliografï¿½a") aparezca
+% una frase cï¿½lebre,  igual que en el resto  de capï¿½tulos. El problema
+% es que  aquï¿½ no ponemos  nosotros a mano  el \chapter{Bibliografï¿½a},
+% sino que lo mete ï¿½l automï¿½ticamente.
 %
 % Afortunadamente,  la gente  de  bibtex  hace las  cosas  bien ;-)  y
-% después  de insertar  el título  de  la sección  ejecuta un  comando
+% despuï¿½s  de insertar  el tï¿½tulo  de  la secciï¿½n  ejecuta un  comando
 % denominado  \bibpreamble  que por  defecto  no  hace  nada. Pero  si
-% sobreescribimos  ese comando,  podremos  ejecutar código  arbitrario
-% justo  después de la  inserción del  título, y  antes de  la primera
+% sobreescribimos  ese comando,  podremos  ejecutar cï¿½digo  arbitrario
+% justo  despuï¿½s de la  inserciï¿½n del  tï¿½tulo, y  antes de  la primera
 % referencia. Por  tanto, lo que hacemos es  sobreescribir ese comando
-% (normalmente  se conocen  como "hooks")  para añadir  la  cita justo
-% después del título.
+% (normalmente  se conocen  como "hooks")  para aï¿½adir  la  cita justo
+% despuï¿½s del tï¿½tulo.
 %
-% Desgraciadamente,  dependiendo  de la  versión  de  Natbib, hay  que
+% Desgraciadamente,  dependiendo  de la  versiï¿½n  de  Natbib, hay  que
 % definir  o redefinir  el comando  (es decir,  utilizar  newcommand o
-% renewcommand)... como eso es un  lío, utilizamos let y def, pues def
+% renewcommand)... como eso es un  lï¿½o, utilizamos let y def, pues def
 % no falla si ya estaba definido.
 
 \let\oldbibpreamble\bibpreamble
 
 \def\bibpreamble{%
 \oldbibpreamble
-% Añadimos a la tabla de contenidos la bibliografía. Si no lo hacemos
-% aquí, sale mal o el número de página (grave) o el enlace en el PDF
+% Aï¿½adimos a la tabla de contenidos la bibliografï¿½a. Si no lo hacemos
+% aquï¿½, sale mal o el nï¿½mero de pï¿½gina (grave) o el enlace en el PDF
 % que te lleva a un sitio cercano (no tan grave).
-% Para que la bibliografía no salga en el PDF añadida a la última
+% Para que la bibliografï¿½a no salga en el PDF aï¿½adida a la ï¿½ltima
 % parte del documento, si hay partes en el mismo, le damos la
-% categoría de "parte".
+% categorï¿½a de "parte".
 \ifx\generatoc\undefined
 \else
 \ifx\tienePartesTeXiS\undefined
-\addcontentsline{toc}{chapter}{Bibliografía}
+\addcontentsline{toc}{chapter}{Bibliografï¿½a}
 \else
-\addcontentsline{toc}{part}{Bibliografía}
+\addcontentsline{toc}{part}{Bibliografï¿½a}
 \fi
 \fi
-% Añadimos también una etiqueta, para poder referenciar el número
-% de página en el que comienza
+% Aï¿½adimos tambiï¿½n una etiqueta, para poder referenciar el nï¿½mero
+% de pï¿½gina en el que comienza
 \label{bibliografia}
-% Frase célebre configurada por el usuario
+% Frase cï¿½lebre configurada por el usuario
 \citaBibliografia
 }
-% Fin definición "bibpreamble"
+% Fin definiciï¿½n "bibpreamble"
 
 
 %
 % Cambiamos  el estilo  de la  cabecera.  Hay que  hacerlo porque  por
-% defecto el paquete que  estamos usando (fancyhdr) pone en mayúsculas
-% el título completo del capítulo.  Con los capítulos normales esto se
-% pudo evitar  en el  preámbulo redefiniendo el  comando \chaptermark,
-% pero con la bibliografía no se puede hacer. Se define la cabera para
-% que aparezca la palabra "Bibliografía" en ambas páginas.
+% defecto el paquete que  estamos usando (fancyhdr) pone en mayï¿½sculas
+% el tï¿½tulo completo del capï¿½tulo.  Con los capï¿½tulos normales esto se
+% pudo evitar  en el  preï¿½mbulo redefiniendo el  comando \chaptermark,
+% pero con la bibliografï¿½a no se puede hacer. Se define la cabera para
+% que aparezca la palabra "Bibliografï¿½a" en ambas pï¿½ginas.
 %
 %
-\cabeceraEspecial{Bibliografía}
+\cabeceraEspecial{BibliografÃ­a}
 
 
-% Creamos la  bibliografía. Lo hacemos  dentro de un bloque  (entre la
+% Creamos la  bibliografï¿½a. Lo hacemos  dentro de un bloque  (entre la
 % pareja \begingroup  ... \endgroup) porque  dentro vamos a  anular la
-% semántica que da babel  a la tilde de la eñe (que  hace que un ~N se
-% convierta  automáticamente en una  Ñ). Esto  es debido  a que  en el
-% bibtex  aparecerán  ~ para  separar  iniciales  de  los nombres  con
+% semï¿½ntica que da babel  a la tilde de la eï¿½e (que  hace que un ~N se
+% convierta  automï¿½ticamente en una  ï¿½). Esto  es debido  a que  en el
+% bibtex  aparecerï¿½n  ~ para  separar  iniciales  de  los nombres  con
 % espacios  no separables  en varias  lineas, y  aquellos  nombres que
-% tengan  una N  como  inicial serían  puestos  como Ñ.  Al anular  la
-% semántica     al    ~    que     da    babel,     deshacemos    este
+% tengan  una N  como  inicial serï¿½an  puestos  como ï¿½.  Al anular  la
+% semï¿½ntica     al    ~    que     da    babel,     deshacemos    este
 % comportamiento. Naturalmente,  para que esto  no tenga repercusiones
-% negativas,  en  ningún  .bib  deberíamos  utilizar ~N  (o  ~n)  para
-% representar una ñ ... tendremos  que utilizar o una Ñ/ñ directamente
+% negativas,  en  ningï¿½n  .bib  deberï¿½amos  utilizar ~N  (o  ~n)  para
+% representar una ï¿½ ... tendremos  que utilizar o una ï¿½/ï¿½ directamente
 % (no  aconsejable porque asume  que hemos  usado inputenc)  o, mejor,
-% usamos la  versión larga  \~n o  \~N que no  falla nunca.   Para más
-% información,  consulta  el  TeXiS_pream.tex  en el  punto  donde  se
+% usamos la  versiï¿½n larga  \~n o  \~N que no  falla nunca.   Para mï¿½s
+% informaciï¿½n,  consulta  el  TeXiS_pream.tex  en el  punto  donde  se
 % incluye natbib y babel.
 
 \begingroup
@@ -148,7 +148,7 @@
 } %\newcommand{\makeBib}
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
-% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+% compilaciï¿½n y funcionen mejor algunas teclas rï¿½pidas de AucTeX
 
 %%%
 %%% Local Variables:
