@@ -15,10 +15,14 @@ SOE-TeX es una plantilla LaTeX para realizar documentos en el formato de Trabajo
 - tocloft
 
 ### Instalación con tinytex
-```tlmgr install babel-spanish
+```
+tlmgr install babel-spanish
 tlmgr install subfig
 tlmgr install caption
 tlmgr install listings
 tlmgr install titlesec
 tlmgr install fancyhdr
-tlmgr install tocloft```
+tlmgr install tocloft
+tlmgr install soul
+tlmgr install setspace
+```
