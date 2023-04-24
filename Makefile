@@ -133,6 +133,7 @@ fastlatex:
 	ps2pdf $(NOMBRE_LATEX).ps
 
 
+cleanall: setperfil distclean settesis distclean
 #
 # Borra todos los ficheros intermedios y el .zip con el posible estado actual.
 # No borra las imagenes convertidas.
@@ -167,20 +168,9 @@ clean:
 	@rm -f *.fdb_latexmk
 	@rm -f *.synctex*
 	@rm -f *.pdfsync
-	@echo Borrado recursivo de la infraestructura TeXiS...
-	@if [ -d TeXiS ]; then cd TeXiS; make clean; fi
-	@echo Borrado recursivo en las cáscaras...
-	@if [ -d Cascaras ]; then cd Cascaras; make clean; fi
-	@echo Borrado recursivo de los capítulos...
-	@if [ -d Capitulos ]; then cd Capitulos; make clean; fi
-	@echo Borrado recursivo de los apéndices...
-	@if [ -d Apendices ]; then cd Apendices; make clean; fi
-	@echo Borrado recursivo de las imágenes...
-	@if [ -d Imagenes/Bitmap ]; then cd Imagenes/Bitmap; make clean; fi
-	@cd Imagenes/Vectorial; make clean
+	@find */ -name Makefile -type f -execdir sh -c "pwd && make clean" \;
 	@echo Borrando el fichero .zip con el estado actual
 	@rm -f $(NOMBRE_LATEX).zip
-
 
 #
 # Borra todos los ficheros intermedios, las copias de seguridad
@@ -194,17 +184,7 @@ distclean: clean
 	@rm -f *.backup
 	@echo Borrando los ficheros de distribución...
 	@rm -f *.tar.gz
-	@echo Borrado recursivo de la infraestructura TeXiS...
-	@if [ -d TeXiS ]; then cd TeXiS; make distclean; fi
-	@echo Borrado recursivo en las cáscaras...
-	@if [ -d Cascaras ]; then cd Cascaras; make distclean; fi
-	@echo Borrado recursivo en los capítulos...
-	@if [ -d Capitulos ]; then cd Capitulos; make distclean; fi
-	@echo Borrado recursivo en los apéndices...
-	@if [ -d Apendices ]; then cd Apendices; make distclean; fi
-	@echo Limpiando las im�genes en formatos adicionales...
-	@if [ -d Imagenes/Bitmap ]; then cd Imagenes/Bitmap; make distclean; fi
-	@cd Imagenes/Vectorial; make distclean
+	@find */ -name Makefile -type f -execdir sh -c "pwd && make distclean" \;
 
 
 #
