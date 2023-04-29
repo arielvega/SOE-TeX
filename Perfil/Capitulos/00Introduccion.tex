@@ -6,7 +6,7 @@
 % Ponemos el contador de capítulos a -1, para que el siguiente sea "Capítulo 0"
 \setcounter{chapter}{-1}
 % Quitamos el número del capitulo va a quedar vacio ''
-\renewcommand*{\thechapter}{}
+%\renewcommand*{\thechapter}{}
 % Cambiamos el formato de la numeración de la subseccion de (.1, .2, .3, etc) a (1, 2, 3, etc)
 \renewcommand*{\thesection}{\arabic{section}}
 % Comando interno de LaTeX, permite que se use la @
@@ -62,7 +62,7 @@ poblaci\'{o}n o sujetos de la investigaci\'{o}n y el contexto donde se investiga
 %-------------------------------------------------------------------
 \subsection{Objeto de estudio}
 %-------------------------------------------------------------------
-\label{cap0:sec:objecto_de_estudio}
+\label{cap0:sub:objecto_de_estudio}
 
 \textbf{(1 a 2 l\'{\i}neas)}, es la parte de la realidad objetiva donde se manifiesta la necesidad 
 o el problema de investigaci\'{o}n y sobre la cual act\'{u}a el sujeto pr\'{a}ctica o 
@@ -72,7 +72,7 @@ te\'{o}ricamente en busca de la soluci\'{o}n adecuada. Responde al \textbf{``QU\
 %-------------------------------------------------------------------
 \subsection{Campo de acci\'on}
 %-------------------------------------------------------------------
-\label{cap0:sec:campo_de_accion}
+\label{cap0:sub:campo_de_accion}
 
 \textbf{(1 a 2 l\'{\i}neas)}, es la parte m\'{a}s concreta de la realidad donde se manifiesta la 
 necesidad o el problema a ser resuelto en el proceso de investigaci\'{o}n. Es un concepto m\'{a}s 
@@ -90,7 +90,7 @@ y es justamente donde se articulan los objetivos. Responde a
 %-------------------------------------------------------------------
 \subsection{Objetivo general}
 %-------------------------------------------------------------------
-\label{cap0:sec:objetivo_general}
+\label{cap0:sub:objetivo_general}
 
 Es la formulaci\'{o}n coherente de la soluci\'{o}n propuesta por el investigador a la necesidad o 
 problema de investigaci\'{o}n planteado. Debe reflejar la esencia del planteamiento del problema y 
@@ -104,7 +104,13 @@ investigaci\'{o}n.
 %-------------------------------------------------------------------
 \subsection{Objetivos espec\'ificos}
 %-------------------------------------------------------------------
-\label{cap0:sec:objetivos_especificos}
+\label{cap0:sub:objetivos_especificos}
+
+Resultan de la operativizaci\'{o}n m\'{a}s concreta del Objetivo General y buscan su realizaci\'{o}n 
+es el c\'{o}mo de la investigaci\'{o}n; c\'{o}mo lograr el objetivo general (pasos m\'{a}s 
+peque\~{n}os), son un anticipo del dise\~{n}o de la investigaci\'{o}n, responden a la estructura
+\textbf{``QU\'{E}''} y \textbf{``PARA QU\'{E}''} e igualmente deben ser medibles. 
+\hl{\textbf{SE DEBEN NUMERAR CONSECUTIVAMENTE, ALINEADOS A LA IZQUIERDA}}
 
 
 
@@ -113,6 +119,38 @@ investigaci\'{o}n.
 %-------------------------------------------------------------------
 \label{cap0:sec:justificacion_de_la_investigacion}
 
+\textbf{(Hasta 1 p\'{a}gina)}, sustentar con argumentos convincentes la realizaci\'{o}n de la 
+investigaci\'{o}n. Puede ayudar, responder las interrogantes: ¿Es de actualidad el tema? 
+¿Qu\'{e} acciones se han realizado al respecto?, ¿Se agravar\'{a} con el transcurso del tiempo?, 
+¿Es viable?, ¿Es factible?, ¿Es de relevancia social?, ¿Qu\'{e} efectos negativos se desencadenan 
+como resultado del estado actual?, ¿Qu\'{e} efectos positivos se tendr\'{\i}an si se realiza la 
+investigaci\'{o}n? De acuerdo con el criterio del investigador, se puede distinguir en 
+econ\'{o}mica, social, te\'{o}rica, pr\'{a}ctica, metodol\'{o}gica, entre otras. 
+
+
+Se recomienda separar en diferentes tipos de justificaci\'{o}n: metodol\'{o}gica, econ\'{o}mica, 
+social, pr\'{a}ctica, te\'{o}rica. 
+
+
+\hl{SE DEBEN ABORDAR AL MENOS TRES ASPECTOS} 
+
+
+%-------------------------------------------------------------------
+\subsection{Justificaci\'{o}n pr\'{a}ctica}
+%-------------------------------------------------------------------
+\label{cap0:sub:justificacion_practica}
+
+
+%-------------------------------------------------------------------
+\subsection{Justificaci\'{o}n metodol\'{o}gica}
+%-------------------------------------------------------------------
+\label{cap0:sub:justificacion_metodologica}
+
+
+%-------------------------------------------------------------------
+\subsection{Justificaci\'{o}n econ\'{o}mica}
+%-------------------------------------------------------------------
+\label{cap0:sub:justificacion_economica}
 
 
 %-------------------------------------------------------------------
@@ -120,27 +158,36 @@ investigaci\'{o}n.
 %-------------------------------------------------------------------
 \label{cap0:sec:formulacion_de_la_construccion_teorica}
 
+Es una construcci\'{o}n te\'{o}rica que plantea una posible descripci\'{o}n, comprensi\'{o}n, 
+correlaci\'{o}n o explicaci\'{o}n como respuesta al problema de estudio. Se trata de una 
+relaci\'{o}n entre \textbf{dos o m\'{a}s variables} expresadas como hechos, fen\'{o}menos, 
+factores o entidades y que debe ser sometida a prueba para ser aceptada como v\'{a}lida. Debe 
+responder al problema de investigaci\'{o}n.
+
+\hl{ESTA EXPLICACI\'{O}N DEBE SER ELIMINADA} 
+
+
 %-------------------------------------------------------------------
 \subsection{Identificaci\'on de las variables}
 %-------------------------------------------------------------------
-\label{cap0:sec:identificacion_de_las_variables}
+\label{cap0:sub:identificacion_de_las_variables}
 
 %-------------------------------------------------------------------
 \subsubsection{Variable independiente}
 %-------------------------------------------------------------------
-\label{cap0:sec:variable_independiente}
+\label{cap0:sub:variable_independiente}
 
 %-------------------------------------------------------------------
 \subsubsection{Variable dependiente}
 %-------------------------------------------------------------------
-\label{cap0:sec:variable_dependiente}
+\label{cap0:sub:variable_dependiente}
 
 
 
 % Se restablece el formato de la numeración de la subseccion de (1, 2, 3, etc) a (1.1, 1.2, 2.3, etc)
 \renewcommand*{\thesection}{\thechapter.\arabic{section}}
 % Se restablece el mostrado del número de capítulo
-\renewcommand*{\thechapter}{\arabic{chapter}}
+%\renewcommand*{\thechapter}{\arabic{chapter}}
 % Y se restablece el nombre del capitulo
 \makeatletter\renewcommand*{\@chapapp}{\chaptername}\makeatother
 

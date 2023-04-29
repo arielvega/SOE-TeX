@@ -29,6 +29,20 @@
 
 \documentclass[12pt,letterpaper,oneside]{book}
 
+\makeatletter
+\def\@makechapterhead#1{%
+  {\parindent \z@ \raggedright \normalfont
+    \large\bfseries \centering
+    \ifnum \c@chapter>\z@
+    \MakeUppercase{\@chapapp\space} \thechapter.\ % <-- Chapter # (with uppercase "Chapter")
+    \fi
+    \interlinepenalty\@M
+    #1\par\nobreak% <------------------ Chapter title
+    \vskip 20 \p@% <------------------ Space between chapter title and first paragraph
+  }}
+\makeatother
+
+
 \newcommand{\proyecto}{Perfil}
 
 %
@@ -108,9 +122,6 @@ constantes,guionado,\proyecto/Cascaras/bibliografia,config%
 % Asignamos margen de 1 pulgada (1in)
 \geometry{margin=1in}
 
-% asignamos interlineado doble
-\doublespacing
-
 \begin{document}
 
 % Incluimos el  fichero de definición de guionado  de algunas palabras
@@ -131,10 +142,15 @@ constantes,guionado,\proyecto/Cascaras/bibliografia,config%
 % Marcamos el  comienzo de  los capítulos (para  la numeración  de las
 % páginas) y ponemos la cabecera normal
 \mainmatter
+
+% asignamos interlineado doble
+\doublespacing
+
 \restauraCabecera
 
 \include{\proyecto/Capitulos/00Introduccion}
 \include{\proyecto/Capitulos/01Capitulo1}
+\include{\proyecto/Capitulos/02Capitulo2}
 %\include{...}
 %\include{...}
 %\include{...}
