@@ -78,7 +78,7 @@ latex: imagenesbitmap imagenesvectoriales
 	-bibtex $(NOMBRE_LATEX)
 	-glosstex $(NOMBRE_LATEX) $(FICHEROS_GLOSARIO)
 	-makeindex $(NOMBRE_LATEX).gxs -o $(NOMBRE_LATEX).glx -s glosstex.ist
-#	-makeindex $(NOMBRE_LATEX)   Si tuvieras �ndice de palabras (mira preambulo.tex)
+#	-makeindex $(NOMBRE_LATEX)   Si tuvieras índice de palabras (mira preambulo.tex)
 #	-makeindex -o $(NOMBRE_LATEX).cnd -t $(NOMBRE_LATEX).clg $(NOMBRE_LATEX).cdx
 	latex $(NOMBRE_LATEX)
 	latex $(NOMBRE_LATEX)
@@ -114,7 +114,7 @@ imagenesbitmap:
 #
 # Genera el documento de manera r�pida, sin invocar a bibtex, ni al
 # �ndice, ni a la conversi�n de im�genes.
-# Es �til para recompilar el documento "de manera incremental",
+# Es útil para recompilar el documento "de manera incremental",
 # cuando no hay cambios en la bibliograf�a o en el �ndice (o no nos
 # preocupa no verlos en el pdf final).
 # Al no invocar a bibtex, adem�s no se repite m�ltiples veces
@@ -138,7 +138,10 @@ cleanall: setperfil distclean settesis distclean
 # Borra todos los ficheros intermedios y el .zip con el posible estado actual.
 # No borra las imagenes convertidas.
 #
-clean:
+
+clean: setperfil clean_ settesis clean_
+
+clean_:
 	@echo Borrando los ficheros de log...
 	@rm -f *.log
 	@echo Borrando los ficheros auxiliares...
@@ -156,7 +159,7 @@ clean:
 	@rm -f *.loch
 	@rm -f *.loil
 	@rm -f *.loap
-	@echo Borrando los ficheros de generaci�n de acrónimos...
+	@echo Borrando los ficheros de generación de acrónimos...
 	@rm -f $(NOMBRE_LATEX).g*
 	@echo Borrando los ficheros de salida...
 	@rm -f *.dvi
@@ -176,6 +179,7 @@ clean:
 # Borra todos los ficheros intermedios, las copias de seguridad
 # y los ficheros generados
 #
+
 distclean: clean
 	@echo Borrando los ficheros de salida...
 	@rm -f *.pdf
@@ -232,24 +236,24 @@ help:
 	@echo 
 	@echo "   pdflatex [predefinido] : Genera el pdf usando pdflatex"
 	@echo "   latex : Genera el pdf usando latex"
-	@echo "   fast : Genera el pdf usando pdflatex de una manera r�pida"
-	@echo "          (y quiz� incompleta). En concreto NO invoca a bibtex"
-	@echo "          ni regenera el �ndice o convierte las im�genes,"
-	@echo "          por lo que el resultado podr�a no ser perfecto."
-	@echo "          Es �til para compilaci�n 'incremental' cuando s�lo"
-	@echo "          se ha tocado texto (sin nueva bibliograf�a o cambios en"
-	@echo "          el �ndice, pues adem�s evita ejecuciones de pdflatex."
+	@echo "   fast : Genera el pdf usando pdflatex de una manera rápida"
+	@echo "          (y quizá incompleta). En concreto NO invoca a bibtex"
+	@echo "          ni regenera el índice o convierte las imágenes,"
+	@echo "          por lo que el resultado podría no ser perfecto."
+	@echo "          Es útil para compilación 'incremental' cuando s�lo"
+	@echo "          se ha tocado texto (sin nueva bibliografía o cambios en"
+	@echo "          el índice, pues además evita ejecuciones de pdflatex."
 	@echo "   fastlatex : semejante a la anterior, pero usando latex".
-	@echo "   imagenes : convierte los pdf, jpg y png a eps (�til para LaTeX)"
+	@echo "   imagenes : convierte los pdf, jpg y png a eps (útil para LaTeX)"
 	@echo "   imagenesvectoriales : convierte los pdf a eps"
 	@echo "   imagenesbitmap : convierte los jpg y png a eps"
 	@echo "   clean : borra ficheros temporales y .zip con estado actual"
 	@echo "   distclean : borra ficheros temporales, .zip con estado actual,"
 	@echo "               copias de seguridad de ficheros .tex, conversiones de"
-	@echo "               las im�genes y ficheros generados (pdf)"
+	@echo "               las imágenes y ficheros generados (pdf)"
 	@echo "   crearZip : genera un .zip con el estado actual, incluyendo el pdf"
 	@echo "   crearVersion : como crearZip, pero lo guarda en VersionesPrevias"
-	@echo "   crearBackup : genera un .zip que incluye tambi�n los .zip de las"
+	@echo "   crearBackup : genera un .zip que incluye también los .zip de las"
 	@echo "                 versiones previas, y lo guarda en el directorio padre"
 	@echo 
 

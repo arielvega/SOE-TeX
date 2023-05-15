@@ -28,5 +28,6 @@ tlmgr install setspace
 tlmgr install multirow
 tlmgr install colortbl
 tlmgr install xcolor
+tlmgr install tabulary
 tlmgr install threeparttable
 ```

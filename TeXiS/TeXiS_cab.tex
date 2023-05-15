@@ -26,13 +26,13 @@
 %
 %---------------------------------------------------------------------
 %
-% Contiene  los comandos  para poder  tener cabeceras  en  las p�ginas
+% Contiene  los comandos  para poder  tener cabeceras  en  las páginas
 % distintas de las que se configuran por defecto.
 %
-% Define  adem�s  algunos  comandos   para  utilizar  en  cap�tulos  y
+% Define  además  algunos  comandos   para  utilizar  en  capítulos  y
 % secciones "especiales"  que no siguen  la cabecera normal,  como los
-% agradecimientos, resumen, tablas de �ndices y secciones de resumen y
-% notas bibliogr�ficas.
+% agradecimientos, resumen, tablas de índices y secciones de resumen y
+% notas bibliográficas.
 %
 %---------------------------------------------------------------------
 
@@ -97,7 +97,7 @@
 % particular, utilizaremos el  estilo "predefinido" fancy, con algunas
 % modificaciones. Además, cambio el estilo de las páginas de principio
 % del capítulo (técnicamente estilo "plain"), para que el número de la
-% p�gina aparezca en la esquina de la derecha (abajo), en vez de en el
+% página aparezca en la esquina de la derecha (abajo), en vez de en el
 % centro. Para los curiosos, explicación al final del fichero.
 \usepackage{fancyhdr}
 
@@ -119,16 +119,16 @@
 \fancyhead[RE]{\leftmark}
 }
 
-\renewcommand{\headrulewidth}{0.2pt}
-\renewcommand{\chaptermark}[1]{%
-\markboth{\textsc{\chaptertitlename\ \thechapter.}\ #1}{}%
-}
-\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
-\fancyhf{}
+%\renewcommand{\headrulewidth}{0.2pt}
+%\renewcommand{\chaptermark}[1]{%
+%\markboth{\textsc{\chaptertitlename\ \thechapter.}\ #1}{}%
+%}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+%\fancyhf{}
 \restauraCabecera
-\fancyhead[RO,LE]{\thepage}
+%\fancyhead[RO,LE]{\thepage}
 
-% Para los cap�tulos que no tienen numeraci�n en el índice ni tienen
+% Para los capítulos que no tienen numeración en el índice ni tienen
 % secciones, se debe cambiar la cabecera, para que no aparezca algo
 % como "Capítulo 0. Agradecimientos". En esos capítulos, la cabecera
 % es "especial", porque en las páginas impares, tampoco aparece el
@@ -140,7 +140,7 @@
 % después del "capítulo especial", debe invocarse a
 % \restauraCabecera. Y decir _después_ significa _después_, es decir
 % cuando el capítulo YA HA TERMINADO, y se ha empezado el siguiente, o
-% forzando final de p�gina con \newpage (\newpage\restauracabecera).
+% forzando final de página con \newpage (\newpage\restauracabecera).
 \newcommand{\cabeceraEspecial}[1]{
 \fancyhead[LO]{\textsc{#1}}
 \fancyhead[RE]{\textsc{#1}}
@@ -154,7 +154,7 @@
 % con numeración.
 %
 % La solución es  modificar a mano la cabecera  (en concreto, la parte
-% izquierda  de las  p�ginas  impares, es  decir  el \markright).  Por
+% izquierda  de las  páginas  impares, es  decir  el \markright).  Por
 % ejemplo, para las conclusiones habría que hacer:
 %
 % \section*{Resumen\markright{Resumen}}
