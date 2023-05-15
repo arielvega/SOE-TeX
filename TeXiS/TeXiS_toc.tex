@@ -100,6 +100,14 @@
 \addcontentsline{loan}{annexe}
 {\protect\numberline{\thechapter. \theannexe}#1}\par}
 
+% Hacemos que las numeraciones de los elementos sean consecutivas
+\counterwithout{chart}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{figure}{chapter}
+\counterwithout{illustration}{chapter}
+\counterwithout{annexe}{chapter}
+
+
 % Creamos los diferentes índices.
 
 % Lo primero un  poco de trabajo en los marcadores  del PDF. No quiero

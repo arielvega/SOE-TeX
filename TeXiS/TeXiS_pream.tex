@@ -68,10 +68,10 @@
 % aparece dicha entrada en alguna de las listas en el documento final.
 % También  puede opcionalmente  especificarse un  texto en  LaTeX para
 % dicha entrada si  queremos poner otra o darle  formato (por ejemplo,
-% si  queremos meter  en  el glosario  el  t�rmino LaTeX,  normalmente
+% si  queremos meter  en  el glosario  el  término LaTeX,  normalmente
 % querremos usar  como etiqueta  identificativa la cadena  LaTeX, pero
 % luego queremos  que al escribirlo  en el documento salga  su versi�n
-% pija conseguida  mediante \LaTeX{}). Tambi�n  tiene una "descripción
+% pija conseguida  mediante \LaTeX{}). También  tiene una "descripción
 % larga"  (útil dependiendo  de  la configuración)  y, finalmente,  la
 % descripción de la entrada.
 %
@@ -112,16 +112,16 @@
 % para ser  ordenado y para aplicarle  estilo. Esto se  realiza con la
 % herramienta externa  makeindex, y usando el  estilo glosstex.ist. El
 % resultado es un  fichero .glx, que por fin  tiene todo correcto. Ese
-% fichero es  utilizado por el comando \printglosstex  dentro de alg�n
+% fichero es  utilizado por el comando \printglosstex  dentro de algún
 % fichero .tex en la proxima invocación a LaTeX
 %
-% Una cosa interesante es en el uso de acr�nimos. Al igual que podemos
+% Una cosa interesante es en el uso de acrónimos. Al igual que podemos
 % utilizar  con natbib cosas  como \citeyear  o \citeauthor,  con esto
 % podemos  hacer \ac{<etiqueta>},  y el  sistema te  pone  el acrónimo
 % automáticamente.  Esto  no  parece   muy  útil,  si  se  piensa  que
 % normalmente el  acrónimo será igual a  la etiqueta ;-)  La gracia es
 % que, además,  la primera vez que  se hace, te  pone entre paréntesis
-% tambi�n la forma larga 8-)
+% también la forma larga 8-)
 %
 % También puedes usar \acf si quieres  que te aparezca las siglas y el
 % significado  entre  paréntesis en  algún  momento.  En realidad  hay
@@ -576,6 +576,10 @@
 % portada.tex para más información.
 \usepackage{calc}
 
+% Permite tener tablas con tres partes, un "caption", el "cuerpo" y las
+% "notas"
+\usepackage[flushleft]{threeparttable}
+
 % Define el entorno  longtable que sirve para crear  tablas que ocupan
 % más de una página.
 %\usepackage{longtable}
@@ -620,14 +624,20 @@
 % indica  que  queremos  línea para  esa  columna,  y  el ~  que  no).
 % \usepackage{hhline}
 
+% paquete para soportar tablas con filas de linea múltiple
+\usepackage{multirow}
+
 %
 % Paquete para  poder ampliar las  opciones de las tablas,  para poder
 % tener párrafos  dentro de una celda  y que nos los  ajuste el propio
 % LaTeX.
 %
-%\usepackage{tabulary}
+\usepackage{tabulary}
+\newcommand*{\thead}[1]{\multicolumn{1}{|c|}{\textbf{#1}}}
+
+
 % Otras opciones anteriores
-%\usepackage{tabularx}  % Este está inclu�do por arriba
+%\usepackage{tabularx}  % Este está incluído por arriba
 %\usepackage{array}
 
 %\usepackage{slashbox}
@@ -648,8 +658,8 @@
 %
 % Paquete para poder poner celdas de colores en una tabla
 %
-%\usepackage{colortbl}
-%\usepackage{color}
+\usepackage{colortbl}
+\usepackage[x11names]{xcolor}
 
 
 % Paquete  que permite  cambiar  el formato  en  el que  se ponen  los
@@ -702,6 +712,8 @@
 % paquete  con  la  opción   [subfigure]   para  evitar  el  error  de
 % "LaTeX Error: Command \c@lofdepth already defined."
 \usepackage[subfigure,titles]{tocloft}
+\counterwithout{figure}{chapter}
+
 
 
 % El paquete "float" se usa para definir nuevos elementos flotantes que
@@ -717,7 +729,7 @@
 \usepackage{setspace}
 
 % "titlesec" permite modificar partes del titulo de capítulos
-\usepackage{titlesec}
+%\usepackage{titlesec}
 %\usepackage{sectsty}
 
 % Si estamos usando  pdflatex, queremos pedir que se  creen enlaces en

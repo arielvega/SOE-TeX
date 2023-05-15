@@ -25,4 +25,8 @@ tlmgr install fancyhdr
 tlmgr install tocloft
 tlmgr install soul
 tlmgr install setspace
+tlmgr install multirow
+tlmgr install colortbl
+tlmgr install xcolor
+tlmgr install threeparttable
 ```
