@@ -37,29 +37,29 @@
 %---------------------------------------------------------------------
 
 
-% EXPLICACI�N DEL FANCYHDR (paquete utilizado para las cabeceras)
+% EXPLICACIÓN DEL FANCYHDR (paquete utilizado para las cabeceras)
 
 % Para definir las cabeceras que  se quieren, se utilizan los comandos
 % \fancyhead y  \fancyfoot. Ambos reciben  como parámetro entre  [] el
 % sitio donde se  quiere establecer. Por ejemplo si  quiero cambiar lo
 % que aparece en las páginas pares (_E_ven), en la parte de la derecha
 % (_R_ight) de la cabecera  (_head_) se utiliza \fancyhead[ER]{Esto va
-%   a la  derecha en  las pares}. En  realidad, esos  par�metros entre
-% corchetes se pueden agrupar. Por  ejemplo, si queremos que el n�mero
-% de p�gina (\thepage)  aparezca en las pares a la  izquierda y en las
+%   a la  derecha en  las pares}. En  realidad, esos  parámetros entre
+% corchetes se pueden agrupar. Por  ejemplo, si queremos que el número
+% de página (\thepage)  aparezca en las pares a la  izquierda y en las
 % impares a la derecha, se usa \fancyhead[LE,RO]{\thepage}.
 %
-% Por otro  lado, en la  pr�ctica se utiliza  un texto en  las p�ginas
+% Por otro  lado, en la  práctica se utiliza  un texto en  las páginas
 % izquierdas (es decir, las pares),  y otra en las derechas (es decir,
 % impares). Por eso, existen dos comandos preestablecidos, \righmark y
-% \leftmark,  que  contienen el  texto  que  aparecer�.  Lo normal  es
-% definir         despu�s:         \fancyhead[LO]{\rightmark}        y
-% \fancyhead[RE]{\leftmark}, para  que a  la izquierda de  las p�ginas
-% impares aparezca la  marca destinada a las p�ginas  de la derecha, y
-% en  la  derecha  de las  pares  el  texto  para  las p�ginas  de  la
+% \leftmark,  que  contienen el  texto  que  aparecerá.  Lo normal  es
+% definir         después:         \fancyhead[LO]{\rightmark}        y
+% \fancyhead[RE]{\leftmark}, para  que a  la izquierda de  las páginas
+% impares aparezca la  marca destinada a las páginas  de la derecha, y
+% en  la  derecha  de las  pares  el  texto  para  las páginas  de  la
 % izquierda.
 %
-% Por  lo tanto,  si  queremos  que en  la  izquierda (p�ginas  pares)
+% Por  lo tanto,  si  queremos  que en  la  izquierda (páginas  pares)
 % aparezca el  nombre del capítulo,  habrá que "definir"  el \leftmark
 % con el nombre.  Si queremos que en la  derecha (impares) aparezca el
 % nombre de la sección, habrá que "definir" así el \rightmark.
@@ -68,18 +68,19 @@
 % que no son  comandos como tal redefinibles...}, sino  que se utiliza
 % el comando \markboth. Según la documentación del paquete fancyhdr:
 %
-% The \leftmark  contains the Left  argument of the Last  \markboth on
-% the  page, the  \rihtmark contains  de Right  argument of  the first
-% \markboth or the only argument  of the first \markright on the page.
-% If no  marks are  present on  a page they  are "inherited"  from the
-% previous page.
+%    The \leftmark contains the Left argument of the Last \markboth
+%    on the page, the \rihtmark contains the Right argument of  the
+%    first  \markboth or the only argument of the first  \markright
+%    on the page.
+%    If no marks  are present  on a page  they are "inherited" from
+%    the previous page.
 %
 % Es decir, el \markboth debe ser  algún tipo de comando que tiene dos
 % parámetros, y  que se puede poner  en cualquier lugar  de la página,
 % para cambiar el título. Por  ejemplo, se puede poner al principio de
 % un capítulo con \markboth{Titulo del capitulo}{}.
 %
-% En  realidad, ese \markboth  intuyo que  est� ya  por defecto  en el
+% En  realidad, ese \markboth  intuyo que  está ya  por defecto  en el
 % comando \chapter, igual  que hay otro similar en  las secciones.  Si
 % se quiere poner otros, basta con redefinir el comando \chaptermark y
 % \sectionmark, que intuyo que serán  como hooks dentro del \chapter y
@@ -106,28 +107,36 @@
 % Definición del estilo en las páginas normales:
 
 % Alargar la cabecera sería:
-%\addtolength{\headwidth}{\marginparwidth}
+\addtolength{\headwidth}{\marginparwidth}
 
 % Hacemos un poco más alta la cabecera, ya que el valor por defecto
 % (12) no es suficiente para el tipo de letra y contenido de cabecera
-% elegido, lo que provoca warnings cont�nuos en la compilación
+% elegido, lo que provoca warnings contínuos en la compilación
 \addtolength{\headheight}{2pt}
 
 % Establecemos el resto de parámetros de apariencia
 \newcommand{\restauraCabecera}{
-\fancyhead[LO]{\rightmark}
-\fancyhead[RE]{\leftmark}
+%\fancyhead[LO]{\rightmark}
+\fancyhead[LO]{}
+%\fancyhead[RE]{\leftmark}
+\fancyhead[RE]{}
 }
 
-%\renewcommand{\headrulewidth}{0.2pt}
-%\renewcommand{\chaptermark}[1]{%
-%\markboth{\textsc{\chaptertitlename\ \thechapter.}\ #1}{}%
-%}
-%\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
-%\fancyhf{}
-\restauraCabecera
-%\fancyhead[RO,LE]{\thepage}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
+%\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\chaptermark}[1]{%
+\markboth{\textsc{\chaptertitlename\ \thechapter.}\ #1}{}%
+}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\fancyhf{}
+%\restauraCabecera
+\fancyhead[RO,LE]{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 % Para los capítulos que no tienen numeración en el índice ni tienen
 % secciones, se debe cambiar la cabecera, para que no aparezca algo
 % como "Capítulo 0. Agradecimientos". En esos capítulos, la cabecera
@@ -193,8 +202,8 @@
 % él   mismo  hiciera   el  \section*{...}    completo,  y   luego  el
 % \addcontentsline... y así no habría problemas. Pero esta solución no
 % es  compatible  con  la   capacidad  de  los  editores  de  resaltar
-% secciones. Por tanto, cada vez que pongas la secci�n de conclusiones
-% o  de en  el pr�ximo  cap�tulo  tienes que,  MANUALMENTE, a�adir  el
+% secciones. Por tanto, cada vez que pongas la sección de conclusiones
+% o  de en  el próximo  capítulo  tienes que,  MANUALMENTE, añadir  el
 % \addcontentsline. Hazlo  _después_ del  \section*. En otro  caso, se
 % utilizará también en  el enlace del PDF la  última sección o figura.
 % Haciéndolo después  en realidad  no queda del  todo bien,  porque el
@@ -217,15 +226,15 @@
 \newcommand{\Resumen}{Resumen\markright{Resumen}}
 \newcommand{\TocResumen}{\addcontentsline{toc}{section}{Resumen}}
 
-\newcommand{\NotasBibliograficas}{Notas bibliogr�ficas\markright{Notas
-    bibliogr�ficas}}
+\newcommand{\NotasBibliograficas}{Notas bibliográficas\markright{Notas
+    bibliográficas}}
 \newcommand{\TocNotasBibliograficas}{\addcontentsline{toc}{section}{Notas
-    bibliogr�ficas}}
+    bibliográficas}}
 
-\newcommand{\ProximoCapitulo}{En el pr�ximo
-  cap�tulo\ldots\markright{En el pr�ximo cap�tulo\ldots}}
+\newcommand{\ProximoCapitulo}{En el próximo
+  cap�tulo\ldots\markright{En el próximo capítulo\ldots}}
 \newcommand{\TocProximoCapitulo}{\addcontentsline{toc}{section}{En
-    el pr�ximo cap�tulo}}
+    el próximo capítulo}}
 
 \newcommand{\Conclusiones}{Conclusiones\markright{Conclusiones\ldots}}
 \newcommand{\TocConclusiones}{\addcontentsline{toc}{section}{Conclusiones}}

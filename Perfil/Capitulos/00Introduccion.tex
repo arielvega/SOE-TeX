@@ -4,7 +4,7 @@
 %
 %---------------------------------------------------------------------
 % Ponemos el contador de capítulos a -1, para que el siguiente sea "Capítulo 0"
-\setcounter{chapter}{-1}
+%\setcounter{chapter}{-1}
 % Quitamos el número del capitulo va a quedar vacio ''
 %\renewcommand*{\thechapter}{}
 % Cambiamos el formato de la numeración de la subseccion de (.1, .2, .3, etc) a (1, 2, 3, etc)
@@ -16,8 +16,9 @@
 % Comando interno de LaTeX, revierte lo que hizo "\makeatletter"
 \makeatother
 
-\chapter{INTRODUCCI\'ON}
-\cabeceraEspecial{INTRODUCCI\'ON}
+\chapter*{INTRODUCCI\'ON}
+\addcontentsline{toc}{chapter}{INTRODUCCI\'ON}  
+
 
 \textbf{(M\'inimo 1 p\'agina y hasta 2 p\'aginas)} Su prop\'osito es brindar informaci\'on al lector 
 acerca del tema de modo que permita la comprensi\'on y evaluaci\'on de resultados del propio trabajo

@@ -29,20 +29,6 @@
 
 \documentclass[12pt,letterpaper,oneside]{book}
 
-\makeatletter
-\def\@makechapterhead#1{%
-  {\parindent \z@ \raggedright \normalfont
-    \large\bfseries \centering
-    \ifnum \c@chapter>\z@
-    \MakeUppercase{\@chapapp\space} \thechapter.\ % <-- Chapter # (with uppercase "Chapter")
-    \fi
-    \interlinepenalty\@M
-    #1\par\nobreak% <------------------ Chapter title
-    \vskip 20 \p@% <------------------ Space between chapter title and first paragraph
-  }}
-\makeatother
-
-
 \newcommand{\proyecto}{Perfil}
 
 %
@@ -67,6 +53,10 @@
 % Total,  que definimos  una constante  con los  ficheros  que siempre
 % vamos a querer compilar  (aquellos relacionados con configuración) y
 % luego definimos \compilaCapitulo.
+%\newcommand{\ficherosBasicosTeXiS}{%
+%TeXiS/TeXiS_pream,TeXiS/TeXiS_cab,TeXiS/TeXiS_bib,TeXiS/TeXiS_cover,%
+%TeXiS/TeXiS_part%
+%}
 \newcommand{\ficherosBasicosTeXiS}{%
 TeXiS/TeXiS_pream,TeXiS/TeXiS_cab,TeXiS/TeXiS_bib,TeXiS/TeXiS_cover,%
 TeXiS/TeXiS_part%
@@ -191,7 +181,7 @@ constantes,guionado,\proyecto/Cascaras/bibliografia,config%
 \fi
 
 %
-% Lista de acr�nimos
+% Lista de acrónimos
 %
 
 % sólo  lo  generamos  si  está declarada  \generaacronimos.  Consulta
