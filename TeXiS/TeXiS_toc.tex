@@ -60,6 +60,9 @@
 	}
 }
 
+%\let\oldtituloReferenciasBibliograficas\tituloReferenciasBibliograficas
+%\renewcommand{\tituloReferenciasBibliograficas}{\formattitlelistof{\oldtituloReferenciasBibliograficas}}
+
 % Un poquito de configuración...
 
 
@@ -117,7 +120,7 @@
 %
 % Índice de anexos (List of annexes)
 \newcommand{\listannexename}{List of charts}
-\newcommand{\listofannexes}{\formattitlelistof{\listannexename}}
+\newcommand{\listofannexes}{\vspace*{0.5in}\formattitlelistof{\listannexename}}
 
 \newlistof{annexe}{loan}{\listofannexes}
 \newcommand{\annexe}[1]{%

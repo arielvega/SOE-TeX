@@ -34,7 +34,7 @@
 % El paquete verbatim  es utilizado por uno de  los comandos definidos
 % en TeXiS.  Aunque  el propio estilo indica que  necesita ese paquete
 % con \RequirePackage, lo  hacemos "explícito" incluyéndolo aqué antes
-% de incluir nuestro paquete.  Es necesario �nicamente para el comando
+% de incluir nuestro paquete.  Es necesario únicamente para el comando
 % "example",  específico del  manual y  que con  toda seguridad  no se
 % necesitará en  ningún otro tipo  de documento (Tesis, etc.),  por lo
 % que si por alguna razón  la inclusión de este paquete interfiere con
@@ -176,9 +176,9 @@
 
 % Incluimos el  estilo de bibliografía natbib, para  poder citarlas de
 % forma más compleja.  Por ejemplo,  \citep{ref} para que nos lo saque
-% entre  par�ntesis, \citet{ref}  normal  (si lo  referenciamos en  un
-% texto), \citeyear{ref} para la  fecha del art�culo, libro, etc�tera,
-% \citeauthor{ref} para los autores... Hay un mont�n de posibilidades.
+% entre  paréntesis, \citet{ref}  normal  (si lo  referenciamos en  un
+% texto), \citeyear{ref} para la  fecha del artículo, libro, etcétera,
+% \citeauthor{ref} para los autores... Hay un montón de posibilidades.
 % Puedes ver información en http://merkel.zoneo.net/Latex/natbib.php
 %
 % Es importante incluirlo ANTES de  babel. Si primero se añade babel y
@@ -195,6 +195,7 @@
 % más  información en  el comentario  de babel  y  en TeXiS_bib.tex
 % http://chico.rediris.es/cgi-bin/wa?A2=ind0601&L=es-tex&D=0&P=1989
 \usepackage[round]{natbib}
+
 
 % Activa el  uso de  español. Babel es  un paquete bastante  gordo que
 % afecta a  otros paquetes de  LaTeX que antes tenían  cableadas cosas
@@ -712,7 +713,6 @@
 % paquete  con  la  opción   [subfigure]   para  evitar  el  error  de
 % "LaTeX Error: Command \c@lofdepth already defined."
 \usepackage[subfigure,titles]{tocloft}
-\counterwithout{figure}{chapter}
 
 
 
@@ -742,8 +742,9 @@
 % ejemplo  "v (5  de  180)"  (con número  romano  porque al  principio
 % empieza a numerarse así).
 \ifpdf
-   \RequirePackage[pdfborder=0,colorlinks,hyperindex,pdfpagelabels]{hyperref}
-   \def\pdfBorderAttrs{/Border [0 0 0] } % Ningún borde en los enlaces
+	\RequirePackage[hyperindex,pdfpagelabels,hidelinks]{hyperref}
+   %\RequirePackage[pdfborder=0,colorlinks,hyperindex,pdfpagelabels]{hyperref}
+   %\def\pdfBorderAttrs{/Border [0 0 0] } % Ningún borde en los enlaces
 \fi
 % Cuando se  genera el  índice, se necesita el paquete "hyperref", que
 % permite referencias  (o enlaces) en el propio  documento. El paquete

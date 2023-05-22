@@ -41,6 +41,9 @@
 % Gestión de la configuración
 %%%
 
+\def\tituloReferenciasBibliograficas{Referencias Bibliogr\'aficas}
+\renewcommand{\bibsection}{\section*{\vspace*{0.5in}\formattitlelistof{\tituloReferenciasBibliograficas}}}
+
 % Ficheros .bib
 \def\ficherosBibliografia{}
 \newcommand{\setBibFiles}[1]{
@@ -86,26 +89,26 @@
 \let\oldbibpreamble\bibpreamble
 
 \def\bibpreamble{%
-\oldbibpreamble
+  \oldbibpreamble
 % Añadimos a la tabla de contenidos la bibliografía. Si no lo hacemos
 % aquí, sale mal o el número de página (grave) o el enlace en el PDF
 % que te lleva a un sitio cercano (no tan grave).
 % Para que la bibliografía no salga en el PDF añadida a la última
 % parte del documento, si hay partes en el mismo, le damos la
 % categoría de "parte".
-\ifx\generatoc\undefined
-\else
-\ifx\tienePartesTeXiS\undefined
-\addcontentsline{toc}{chapter}{Bibliograf\'ia}
-\else
-\addcontentsline{toc}{part}{Bibliograf\'ia}
-\fi
-\fi
+  \ifx\generatoc\undefined
+  \else
+    \ifx\tienePartesTeXiS\undefined
+      \addcontentsline{toc}{chapter}{\tituloReferenciasBibliograficas}
+    \else
+      \addcontentsline{toc}{part}{\tituloReferenciasBibliograficas}
+    \fi
+  \fi
 % Añadimos también una etiqueta, para poder referenciar el número
 % de página en el que comienza
-\label{bibliografia}
+  \label{referencia_bibliografica}
 % Frase célebre configurada por el usuario
-\citaBibliografia
+  \citaBibliografia
 }
 % Fin definición "bibpreamble"
 
@@ -119,7 +122,7 @@
 % que aparezca la palabra "Bibliografía" en ambas páginas.
 %
 %
-\cabeceraEspecial{Bibliografía}
+\cabeceraEspecial{\tituloReferenciasBibliograficas}
 
 
 % Creamos la  bibliografía. Lo hacemos  dentro de un bloque  (entre la
@@ -139,10 +142,10 @@
 % incluye natbib y babel.
 
 \begingroup
-\spanishdeactivate{~}
-\bibliographystyle{TeXiS/TeXiS}
+  \spanishdeactivate{~}
+  \bibliographystyle{TeXiS/TeXiS}
 %\bibliographystyle{abbrv}
-\bibliography{\ficherosBibliografia}
+  \bibliography{\ficherosBibliografia}
 \endgroup
 
 } %\newcommand{\makeBib}
