@@ -35,8 +35,32 @@
 %
 %---------------------------------------------------------------------
 
+% FORMATOS DE TÍTULOS
+% Capítulo
+\titleformat{\chapter}
+{\normalfont\large\filcenter\bfseries}{\MakeUppercase{\chaptertitlename}\ \thechapter}{1em}{}
 
-% Primero un poquito de configuración...
+% Seccion
+\titleformat{\section}
+{\normalfont\normalsize\bfseries}{\thesection}{1em}{}
+
+% Subsección
+\titleformat{\subsection}
+{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+
+% Agrega un punto (.) al final de las numeraciones
+\renewcommand{\thechapter}{\arabic{chapter}.}
+\renewcommand{\thesection}{\thechapter\arabic{section}.}
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
+
+% Formato del Título de los Índices de Cuadros, Figuras, Anexos
+\newcommand{\formattitlelistof}[1]{%
+	\thispagestyle{plain}{%
+		\begin{center}\textbf{\large #1}\end{center}
+	}
+}
+
+% Un poquito de configuración...
 
 
 % Pedimos  que inserte  todos los epígrafes hasta el nivel \subsection
@@ -74,11 +98,12 @@
 %    \newcommand{\listprojectname}{List of projects}
 %    \newcommand{\listofprojects}{\listof{project}{\thispagestyle{empty} \textbf{\huge \listprojectname}}}
 
+
 % Índice de cuadros (List of charts)
 \newfloat{chart}{tbph}{loch}[chapter]
 \floatname{chart}{Cuadro}
 \newcommand{\listchartname}{List of charts}
-\newcommand{\listofcharts}{\listof{chart}{\thispagestyle{empty} \textbf{\huge \listchartname}}}
+\newcommand{\listofcharts}{\listof{chart}{\formattitlelistof{\listchartname}}}
 
 %
 %
@@ -86,19 +111,20 @@
 \newfloat{illustration}{tbph}{loil}[chapter]
 \floatname{illustration}{Ilustraci\'on}
 \newcommand{\listillustrationname}{List of illustrations}
-\newcommand{\listofillustrations}{\listof{illustration}{\thispagestyle{empty} \textbf{\huge \listillustrationname}}}
+\newcommand{\listofillustrations}{\listof{illustration}{\formattitlelistof{\listillustrationname}}}
 
 %
 %
 % Índice de anexos (List of annexes)
 \newcommand{\listannexename}{List of charts}
-\newcommand{\listofannexes}{\thispagestyle{empty} \textbf{\huge \listannexename}}
+\newcommand{\listofannexes}{\formattitlelistof{\listannexename}}
+
 \newlistof{annexe}{loan}{\listofannexes}
 \newcommand{\annexe}[1]{%
 \refstepcounter{annexe}
 \par\noindent\textbf{Annexe \theannexe. #1}
 \addcontentsline{loan}{annexe}
-{\protect\numberline{\thechapter. \theannexe}#1}\par}
+{\protect\numberline{\theannexe}#1}\par}
 
 % Hacemos que las numeraciones de los elementos sean consecutivas
 \counterwithout{chart}{chapter}
@@ -220,7 +246,7 @@
 
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
-% compilación y funcionen mejor algunas teclas r�pidas de AucTeX
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
 
 %%%
 %%% Local Variables:

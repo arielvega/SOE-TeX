@@ -17,6 +17,7 @@ SOE-TeX es una plantilla LaTeX para realizar documentos en el formato de Trabajo
 ### Instalación con tinytex
 ```
 tlmgr install babel-spanish
+tlmgr install hyphen-spanish
 tlmgr install subfig
 tlmgr install caption
 tlmgr install listings

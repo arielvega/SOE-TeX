@@ -38,11 +38,11 @@ makeall: makeperfil #maketesis
 # los nombres, ¡se borrarán las fuentes!
 setperfil:
 	$(eval NOMBRE_LATEX = 'Perfil')
-	$(eval FICHEROS_GLOSARIO = $(NOMBRE_LATEX)_acronimos.gdf)
+	$(eval FICHEROS_GLOSARIO = acronimos.gdf)
 
 settesis:
 	$(eval NOMBRE_LATEX = 'Tesis')
-	$(eval FICHEROS_GLOSARIO = $(NOMBRE_LATEX)_acronimos.gdf)
+	$(eval FICHEROS_GLOSARIO = acronimos.gdf)
 
 
 makeperfil: setperfil pdflatex
@@ -57,7 +57,7 @@ maketesis: settesis pdflatex
 pdflatex: makeperfil
 	pdflatex $(NOMBRE_LATEX)
 	-bibtex $(NOMBRE_LATEX)
-	-glosstex $(NOMBRE_LATEX) $(FICHEROS_GLOSARIO)
+#	-glosstex $(NOMBRE_LATEX) acronimos.gdf
 	-makeindex $(NOMBRE_LATEX).gxs -o $(NOMBRE_LATEX).glx -s glosstex.ist
 #	-makeindex $(NOMBRE_LATEX)   Si tuvieras índice de palabras (mira preambulo.tex)
 	pdflatex $(NOMBRE_LATEX)
@@ -67,8 +67,8 @@ pdflatex: makeperfil
 # debe detenerse. Eso podría ocurrir en el makeindex si se está
 # generando el PDF en modo "depuración" en la que no se muestra el
 # índice para ahorrar tiempo.  También se puso en bibtex porque al
-# principio del todo no hab�a referencias, bibtex se quejaba, y paraba
-# toda la construcci�n.
+# principio del todo no había referencias, bibtex se quejaba, y paraba
+# toda la construcción.
 
 #
 # Genera el documento utilizando latex
@@ -76,7 +76,7 @@ pdflatex: makeperfil
 latex: imagenesbitmap imagenesvectoriales
 	latex $(NOMBRE_LATEX)
 	-bibtex $(NOMBRE_LATEX)
-	-glosstex $(NOMBRE_LATEX) $(FICHEROS_GLOSARIO)
+	-glosstex $(NOMBRE_LATEX) acronimos.gdf
 	-makeindex $(NOMBRE_LATEX).gxs -o $(NOMBRE_LATEX).glx -s glosstex.ist
 #	-makeindex $(NOMBRE_LATEX)   Si tuvieras índice de palabras (mira preambulo.tex)
 #	-makeindex -o $(NOMBRE_LATEX).cnd -t $(NOMBRE_LATEX).clg $(NOMBRE_LATEX).cdx
@@ -112,13 +112,13 @@ imagenesbitmap:
 
 
 #
-# Genera el documento de manera r�pida, sin invocar a bibtex, ni al
-# �ndice, ni a la conversi�n de im�genes.
+# Genera el documento de manera rápida, sin invocar a bibtex, ni al
+# índice, ni a la conversión de imágenes.
 # Es útil para recompilar el documento "de manera incremental",
-# cuando no hay cambios en la bibliograf�a o en el �ndice (o no nos
+# cuando no hay cambios en la bibliografía o en el índice (o no nos
 # preocupa no verlos en el pdf final).
-# Al no invocar a bibtex, adem�s no se repite m�ltiples veces
-# la compilaci�n del documento.
+# Al no invocar a bibtex, además no se repite múltiples veces
+# la compilación del documento.
 # Utiliza pdflatex.
 #
 fast:

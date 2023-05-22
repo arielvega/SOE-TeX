@@ -35,31 +35,10 @@
 % Gestión de la configuración
 %%%
 
-% Formato del titulo de los capítulos
-\makeatletter
-\def\@makechapterhead#1{%
-  {\parindent \z@ \raggedright \normalfont
-    \large\bfseries \centering
-    \ifnum \c@chapter>\z@
-    \MakeUppercase{\@chapapp\space} \thechapter.\ % <-- Chapter # (with uppercase "Chapter")
-    \fi
-    \interlinepenalty\@M
-    #1\par\nobreak% <------------------ Chapter title
-    \vskip 20 \p@% <------------------ Space between chapter title and first paragraph
-  }}
-\makeatother
-
-% Tamaños de las fuentes: 12pt altura de linea 15pt
-% Seccion
-\titleformat{\section}
-  {\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
-
-% Subsección
-\titleformat{\subsection}
-  {\normalfont\fontsize{12}{15}\bfseries}{\thesubsection}{1em}{}
-
 % Quitamos identacionde los parrafos
 \setlength{\parindent}{0pt}
+% Agrega un espacio entre párrafos
+\setlength{\parskip}{\baselineskip}
 
 % Título de la parte
 \def\partTitleVal{}

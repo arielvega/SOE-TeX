@@ -3,20 +3,14 @@
 %                           Introducción
 %
 %---------------------------------------------------------------------
-% Ponemos el contador de capítulos a -1, para que el siguiente sea "Capítulo 0"
-%\setcounter{chapter}{-1}
-% Quitamos el número del capitulo va a quedar vacio ''
-%\renewcommand*{\thechapter}{}
-% Cambiamos el formato de la numeración de la subseccion de (.1, .2, .3, etc) a (1, 2, 3, etc)
-\renewcommand*{\thesection}{\arabic{section}}
-% Comando interno de LaTeX, permite que se use la @
-\makeatletter
-% Reemplazamos "Capítulo" por "Introducción"
-\renewcommand*{\@chapapp}{}
-% Comando interno de LaTeX, revierte lo que hizo "\makeatletter"
-\makeatother
+% Guardamos el comando antes de redefinirlo
+\let\oldthesection\thesection
+% Cambiamos el formato de la numeración de la subseccion de (0.1, 0.2, 0.3, etc) a (1, 2, 3, etc)
+\renewcommand*{\thesection}{\arabic{section}.}
 
+% Crea un capítulo sin numeración
 \chapter*{INTRODUCCI\'ON}
+% Agrega un capítulo ficticio a la Tabla de Contenidos (ToC)
 \addcontentsline{toc}{chapter}{INTRODUCCI\'ON}  
 
 
@@ -26,7 +20,6 @@ acerca del tema de modo que permita la comprensi\'on y evaluaci\'on de resultado
 introducci\'on es la fundamentaci\'on del proyecto en forma resumida. En ella se deben exponer 
 brevemente, pero con absoluta claridad, la novedad y actualidad del tema. El \'ultimo p\'arrafo es 
 la presentaci\'on del trabajo que se va a realizar. \hl{REDACCI\'ON EN TERCERA PERSONA DEL SINGULAR}
-
 
 
 %-------------------------------------------------------------------
@@ -187,12 +180,9 @@ responder al problema de investigaci\'{o}n.
 
 
 
-% Se restablece el formato de la numeración de la subseccion de (1, 2, 3, etc) a (1.1, 1.2, 2.3, etc)
-\renewcommand*{\thesection}{\thechapter.\arabic{section}}
-% Se restablece el mostrado del número de capítulo
-%\renewcommand*{\thechapter}{\arabic{chapter}}
-% Y se restablece el nombre del capitulo
-\makeatletter\renewcommand*{\@chapapp}{\chaptername}\makeatother
+% Se restablece el formato de la numeración de la subseccion
+\let\thesection\oldthesection
+
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX

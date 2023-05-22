@@ -65,11 +65,11 @@ TeXiS/TeXiS_part%
 constantes,guionado,\proyecto/Cascaras/bibliografia,config%
 }
 \newcommand{\compilaCapitulo}[1]{%
-\includeonly{\ficherosBasicosTeXiS,\ficherosBasicosTexto,\proyecto/Capitulos/#1}%
+\includeonly{\ficherosBasicosTeXiS,\ficherosBasicosTexto,Perfil/Capitulos/#1}%
 }
 
 \newcommand{\compilaApendice}[1]{%
-\includeonly{\ficherosBasicosTeXiS,\ficherosBasicosTexto,\proyecto/Apendices/#1}%
+\includeonly{\ficherosBasicosTeXiS,\ficherosBasicosTexto,Perfil/Apendices/#1}%
 }
 
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -122,7 +122,7 @@ constantes,guionado,\proyecto/Cascaras/bibliografia,config%
 % (usando números romanos para esta primera fase).
 \frontmatter
 
-\include{\proyecto/Cascaras/cover}
+\include{Perfil/Cascaras/cover}
 
 \ifx\generatoc\undefined
 \else
@@ -138,19 +138,19 @@ constantes,guionado,\proyecto/Cascaras/bibliografia,config%
 
 \restauraCabecera
 
-\include{\proyecto/Capitulos/00Introduccion}
-\include{\proyecto/Capitulos/01Capitulo1}
-\include{\proyecto/Capitulos/02Capitulo2}
+\include{Perfil/Capitulos/00Introduccion}
+\include{Perfil/Capitulos/01Capitulo1}
+\include{Perfil/Capitulos/02Capitulo2}
 %\include{...}
 %\include{...}
 %\include{...}
 %\include{...}
 %\include{...}
 
-% Ap�ndices
+% Apéndices
 \appendix
-\include{\proyecto/Apendices/ParteApendices}
-\include{\proyecto/Apendices/01ApendiceA}
+\include{Perfil/Apendices/ParteApendices}
+\include{Perfil/Apendices/01ApendiceA}
 %\include{...}
 %\include{...}
 %\include{...}
@@ -158,17 +158,17 @@ constantes,guionado,\proyecto/Cascaras/bibliografia,config%
 \backmatter
 
 %
-% Bibliograf�a
+% Bibliografía
 %
 
-\include{\proyecto/Cascaras/bibliografia}
+\include{Perfil/Cascaras/bibliografia}
 
 %
-% �ndice de palabras
+% Índice de palabras
 %
 
 % sólo  la   generamos  si  está   declarada  \generaindice.  Consulta
-% TeXiS.sty para m�s información.
+% TeXiS.sty para más información.
 
 % En realidad, el soporte para la generación de índices de palabras
 % en TeXiS no está documentada en el manual, porque no ha sido usada
@@ -185,7 +185,7 @@ constantes,guionado,\proyecto/Cascaras/bibliografia,config%
 %
 
 % sólo  lo  generamos  si  está declarada  \generaacronimos.  Consulta
-% TeXiS.sty para m�s información.
+% TeXiS.sty para más información.
 
 
 \ifx\generaacronimos\undefined
@@ -196,6 +196,6 @@ constantes,guionado,\proyecto/Cascaras/bibliografia,config%
 %
 % Final
 %
-\include{\proyecto/Cascaras/fin}
+\include{Perfil/Cascaras/fin}
 
 \end{document}
