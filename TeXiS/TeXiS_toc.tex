@@ -37,8 +37,12 @@
 
 % FORMATOS DE TÍTULOS
 % Capítulo
+% Formato: Centrado con la etiqueta del capitulo en mayúscula
 \titleformat{\chapter}
 {\normalfont\large\filcenter\bfseries}{\MakeUppercase{\chaptertitlename}\ \thechapter}{1em}{}
+% Espaciado dellTítulo del Capítulo,
+\titlespacing*{\chapter}{0pt}{-40pt}{1em}
+
 
 % Seccion
 \titleformat{\section}
@@ -60,6 +64,8 @@
 	}
 }
 
+
+%\titlespacing*{\chapter}{0pt}{0pt}{40pt}
 %\let\oldtituloReferenciasBibliograficas\tituloReferenciasBibliograficas
 %\renewcommand{\tituloReferenciasBibliograficas}{\formattitlelistof{\oldtituloReferenciasBibliograficas}}
 
@@ -119,8 +125,8 @@
 %
 %
 % Índice de anexos (List of annexes)
-\newcommand{\listannexename}{List of charts}
-\newcommand{\listofannexes}{\vspace*{0.5in}\formattitlelistof{\listannexename}}
+\newcommand{\listannexename}{List of annexes}
+\newcommand{\listofannexes}{\formattitlelistof{\listannexename}}
 
 \newlistof{annexe}{loan}{\listofannexes}
 \newcommand{\annexe}[1]{%
